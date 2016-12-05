@@ -1,0 +1,29 @@
+
+@mixin gradient-vertical($start-color: #000, $end-color: #fff, $start-percent: 0%, $end-percent: 100%) {
+	background-image: -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Safari 5.1-6, Chrome 10+
+	background-image: -o-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Opera 12
+	// background-image: url('/images/bg_noise.png'), linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+	background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+	background-repeat: repeat;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+}
+
+/**
+DIMENSIONS AND BREAKPOINTS
+
+Example:
+#page-layout {            // mobile first
+	width: 100%;
+	padding: 2px 10px;
+
+	@include desktop {     // alter for desktop
+		max-width: 320px;
+		padding-top: 2rem;
+	}
+}
+*/
+@mixin desktop {
+	@media (min-width: #{$desktop-breakpoint}) {
+		@content;
+	}
+}

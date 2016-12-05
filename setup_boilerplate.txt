@@ -1,0 +1,29 @@
+// Meteor SETUP
+meteor create [app_name]
+
+
+// REACT APP
+npm install --save react react-dom react-mounter react-router babel-runtime
+meteor remove blaze-html-templates insecure autopublish
+meteor add static-html fourseven:scss
+
+
+// REACT DATA
+meteor add react-meteor-data
+
+
+// DIRECTORY SETUP
+mkdir lib private
+mkdir -p imports/{components,layouts,lib,methods,stylesheets}
+mv client/main.js client/routes.jsx
+mv client/main.css client/main.scss
+touch lib/collections.js
+mkdir -p public/{images,photos}
+
+
+
+
+// Simplified for this
+mkdir -p imports/{components,layouts}
+mv client/main.js client/routes.jsx
+rm client/main.css
