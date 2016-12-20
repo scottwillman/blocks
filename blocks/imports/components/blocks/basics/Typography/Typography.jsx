@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Text.scss';
+import './Typography.scss';
 
 /**
 */
@@ -20,9 +20,9 @@ export const Heading = (props) => {
 	);
 }
 
-export const Body = (props) => {
+export const Paragraph = (props) => {
 	return(
-		<p className="text-body" style={props.style}>
+		<p className="text-paragraph" style={props.style}>
 			{props.children}
 		</p>
 	);

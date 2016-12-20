@@ -97,6 +97,10 @@ export class CodeBlock extends React.Component {
 		return trimmedLines.join("\n");
 	}
 
+	componentDidMount() {
+		Prism.highlightAll();
+	}
+
 	render() {
 		let languageClass = "language-"+this.props.language;
 

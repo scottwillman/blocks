@@ -1,0 +1,62 @@
+
+
+%tag-base {
+	border-radius: .2rem;
+	font-size: .85rem;
+	padding: .15rem .4rem;
+	padding-bottom: .2rem;
+	margin-right: .25rem;
+}
+%tag-base-light {
+	@extend %tag-base;
+	color: hsl(0,0,0);
+}
+%tag-base-dark {
+	@extend %tag-base;
+	color: hsl(0,0,100);
+}
+
+span.tag-black {
+	@extend %tag-base-dark;
+	background-color: hsl(0,0,25);
+}
+span.tag-grey-light {
+	@extend %tag-base-light;
+	background-color: hsl(0,0,90);
+}
+span.tag-grey-dark {
+	@extend %tag-base-dark;
+	background-color: hsl(0,0,60);
+}
+span.tag-orange-light {
+	@extend %tag-base-light;
+	background-color: hsl(37,75,80);
+}
+span.tag-orange-dark {
+	@extend %tag-base-dark;
+	background-color: hsl(37,85,60);
+}
+span.tag-red-light {
+	@extend %tag-base-light;
+	background-color: hsl(0,60,80);
+}
+span.tag-red-dark {
+	@extend %tag-base-dark;
+	background-color: hsl(0,60,60);
+}
+span.tag-blue-light {
+	@extend %tag-base-light;
+	background-color: hsl(214,60,80);
+}
+span.tag-blue-dark {
+	@extend %tag-base-dark;
+	background-color: hsl(214,60,60);
+}
+span.tag-green-light {
+	@extend %tag-base-light;
+	background-color: hsl(114,75,80);
+}
+span.tag-green-dark {
+	@extend %tag-base-dark;
+	background-color: hsl(114,75,40);
+}

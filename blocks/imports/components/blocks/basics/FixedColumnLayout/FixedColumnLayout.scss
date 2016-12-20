@@ -1,0 +1,29 @@
+@import "../../base/_defaults.scss";
+@import "../../base/_mixins.scss";
+
+.fixed-column-layout {
+	width: 100%;
+	margin: 0 auto;
+
+	// &:after {
+	// 	content: " ";
+	// 	display: table;
+	// 	clear: both;
+	// }
+}
+
+.fixed-column {
+	width: 200px;
+	padding: .5rem;
+	// background-color: hsl(243, 25, 80);
+}
+
+.elastic-content {
+	margin-left: 200px;
+	padding: .5rem;
+	// margin: 0 auto;
+	// background-color: hsl(118, 25, 80);
+	// @include desktop {
+	// 	width: $desktop-width;
+	// }
+}

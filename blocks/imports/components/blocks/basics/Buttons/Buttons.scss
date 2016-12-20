@@ -8,19 +8,19 @@
 // size  - large/default/small
 
 %button-defaults {
-	// display: block;
+	display: inline-block;
 	cursor: pointer;
 	margin-right: .25rem;
 }
 button.size-small {
 	border-radius: .25rem;
 	font-size: .75rem;
-	padding: .4rem .65rem;
+	padding: .25rem .5rem;
 }
 button.size-medium {
 	border-radius: .35rem;
 	font-size: 1rem;
-	padding: .5rem .9rem;
+	padding: .5rem .75rem;
 }
 button.size-large {
 	border-radius: .4rem;
@@ -44,8 +44,8 @@ button.flavor-default-1 {
 
 	&:hover {
 		text-decoration: none;
-		@include gradient-vertical($start-color: #eee, $end-color: #ddd);
-		border-color: #ccc;
+		@include gradient-vertical($start-color: hsl(0,0,93), $end-color: hsl(0,0,87));
+		border-color: hsl(0,0,80);
 		text-shadow: -1px 2px 0 hsl(0,0,92);
 	}
 
@@ -72,21 +72,21 @@ button.flavor-default-2 {
 
 	font-family: $font-b;
 
-	@include gradient-vertical($start-color: hsl(0,0,20), $end-color: hsl(0,0,10));
-	border-color: rgb(213,213,213);
+	@include gradient-vertical($start-color: hsl(0,0,25), $end-color: hsl(0,0,10));
+	border-color: hsl(0,0,30);
 
 	color: hsl(0,0,100);
 	// text-shadow: -1px 2px 0 hsl(0,0,100);
 
 	&:hover {
 		text-decoration: none;
-		@include gradient-vertical($start-color: #eee, $end-color: #ddd);
-		border-color: #ccc;
+		@include gradient-vertical($start-color: hsl(0,0,15), $end-color: hsl(0,0,10));
+		border-color: hsl(0,0,30);
 		// text-shadow: -1px 2px 0 hsl(0,0,92);
 	}
 
 	&:active {
-		background-color: #dcdcdc;
+		background-color: hsl(0,0,0);
 		background-image: none;
 		border-color: #b5b5b5;
 		box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
@@ -120,22 +120,22 @@ button.usage-danger {
 
 }
 
-.btn {
-	display: block;
-	cursor: pointer;
-
-	font-size: 1rem;
-	font-family: $font-a;
-
-	padding: .5rem .9rem;
-	margin-top: .25rem;
-	margin-bottom: .25rem;
-
-	// @include gradient-vertical($start-color: hsl(0,0,100), $end-color: hsl(0,0,94));
-
-	border-width: 1px;
-	border-style: solid;
-	border-radius: .25rem;
+// .btn {
+// 	display: block;
+// 	cursor: pointer;
+//
+// 	font-size: 1rem;
+// 	font-family: $font-a;
+//
+// 	padding: .5rem .9rem;
+// 	margin-top: .25rem;
+// 	margin-bottom: .25rem;
+//
+// 	// @include gradient-vertical($start-color: hsl(0,0,100), $end-color: hsl(0,0,94));
+//
+// 	border-width: 1px;
+// 	border-style: solid;
+// 	border-radius: .25rem;
 	// border-color: rgb(213,213,213);
 
 	// color: rgb(51,51,51);
@@ -148,25 +148,27 @@ button.usage-danger {
 	// 	text-shadow: -1px 2px 0 hsl(0,0,92);
 	// }
 
-	&:active {
-		background-color: #dcdcdc;
-		background-image: none;
-		border-color: #b5b5b5;
-		box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
-	}
-
-	&:focus {
-		text-decoration: none;
-		border-color: #51a7e8;
-		outline: none;
-		box-shadow: 0 0 5px rgba(81,167,232,0.5);
-	}
-}
+// 	&:active {
+// 		background-color: #dcdcdc;
+// 		background-image: none;
+// 		border-color: #b5b5b5;
+// 		box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
+// 	}
+//
+// 	&:focus {
+// 		text-decoration: none;
+// 		border-color: #51a7e8;
+// 		outline: none;
+// 		box-shadow: 0 0 5px rgba(81,167,232,0.5);
+// 	}
+// }
 
 
 .btn-group button:not(:first-child):not(:last-child) {
 	border-radius: 0;
-	border-left: 0
+	border-left: 0;
+	margin-left: 0;
+	margin-right: 0;
 }
 .btn-group button:last-child {
 	border-top-left-radius: 0;
@@ -176,4 +178,5 @@ button.usage-danger {
 .btn-group button:first-child {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
+	margin-right: 0;
 }

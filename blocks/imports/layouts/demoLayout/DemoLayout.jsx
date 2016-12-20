@@ -1,98 +1,88 @@
+
 import React from 'react';
 
 import './DemoLayout.scss';
 
-import { PageContainer } from '/imports/components/blocks/basics/PageContainer/PageContainer.jsx';
-import { SectionHeading, Heading, Body } from '/imports/components/blocks/basics/Text/Text.jsx';
-import { Button } from '/imports/components/blocks/basics/Buttons/Buttons.jsx';
-import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock.jsx';
+import { PageContainer } from '/imports/components/blocks/basics/Containers/Containers.jsx';
+import { FixedColumnLayout, FixedColumn, ElasticContent } from '/imports/components/blocks/basics/FixedColumnLayout/FixedColumnLayout.jsx';
+import { HorizontalNavigationList, VerticalNavigationList, NavListHeading, NavListLink, NavListText} from '/imports/components/blocks/basics/NavigationLists/NavigationLists.jsx';
+import { Button, ButtonGroup } from '/imports/components/blocks/basics/Buttons/Buttons.jsx';
+
+// import { ButtonDemo } from './pages/buttonDemo.jsx';
+// import { TypographyDemo } from './pages/typographyDemo.jsx';
+// import { CodeBlockDemo } from './pages/codeBlockDemo.jsx';
+// import { FixedColumnLayoutDemo } from './pages/fixedColumnLayoutDemo.jsx';
+import { ToolBar, ToolBarContainer } from '/imports/components/blocks/basics/ToolBar/ToolBar.jsx';
+
+import { Link } from 'react-router';
 
 
+export const DemoLayout = (props) => {
 
-export class DemoLayout extends React.Component {
-
-	demoOnClick(e) {
-		e.preventDefault();
-		console.log("Demo Output");
-		alert("Demo Output");
+	const toolBarStyle = {
+		backgroundColor: "#f2f2f2",
+	}
+	const fixedColumnStyle = {
+		"paddingLeft": "0",
+		"paddingRight": "0",
+	}
+	const fixedColumnLayoutStyle = {
+		"paddingTop": "1.5rem",
+	}
+	const elasticContentStyle = {
+		"padding": "0 1.5rem",
+		"borderLeft": "solid 1px rgb(235,235,235)",
+	}
+	const headingSecondaryStyle = {
+		"marginTop": "1rem",
 	}
 
-	render() {
+	return (
+		<PageContainer fullWidth={true}>
+			<ToolBar size="small" style={toolBarStyle}>
+				<ToolBarContainer side="left">
+					<HorizontalNavigationList>
+						<NavListLink to="/buttons">Buttons</NavListLink>
+						<NavListLink to="/toolbar">ToolBar</NavListLink>
+					</HorizontalNavigationList>
 
-		const sectionHeadingStyle = {
-			"marginTop": "2.5rem",
-		}
-		const headingStyle = {
-			"marginTop": "1.5rem",
-			"marginBottom": ".8rem",
-		}
-		const codeBlockStyle = {
-			"marginTop": ".5rem",
-		}
+				</ToolBarContainer>
+			</ToolBar>
 
-		return (
-			<PageContainer>
+			<FixedColumnLayout style={fixedColumnLayoutStyle}>
 
-				{/* BUTTONS */}
-				<SectionHeading style={sectionHeadingStyle}>Buttons</SectionHeading>
-				<Heading style={headingStyle}>Sizes</Heading>
-				<Body>All buttons come in small, medium (default), or large.</Body>
+				<FixedColumn side="left" style={fixedColumnStyle}>
 
-				<div>
-					<Button flavor="default-1" size="large">Button Text</Button>
-					<Button flavor="default-1" size="medium">Button Text</Button>
-					<Button flavor="default-1" size="small">Button Text</Button>
+					<VerticalNavigationList>
+						<NavListHeading>Basic Components</NavListHeading>
+						<NavListLink to="/buttons">Buttons</NavListLink>
+						<NavListLink to="/typography">Typography</NavListLink>
+						<NavListLink to="/codeblock">CodeBlock</NavListLink>
+						<NavListLink to="/containers">Containers</NavListLink>
+						<NavListLink to="/fixedcolumnlayout">FixedColumnLayout</NavListLink>
+						<NavListLink to="/verticalnavigationlist">VerticalNavigationList</NavListLink>
+						<NavListLink to="/horizontalnavigationlist">HorizontalNavigationList</NavListLink>
+						<NavListLink to="/spreadsheet">Spreadsheet</NavListLink>
+						<NavListLink to="/toolbar">ToolBar</NavListLink>
+						<NavListLink to="/tags">Tags</NavListLink>
 
-					<CodeBlock language="jsx" style={codeBlockStyle}>{`
-						<Button flavor="default-1" size="large">Button Text</Button>
-						<Button flavor="default-1" size="medium">Button Text</Button>
-						<Button flavor="default-1" size="small">Button Text</Button>
-					`}</CodeBlock>
-				</div>
-				<Heading style={headingStyle}>Styling</Heading>
-				<Body>Buttons come in different <em>flavors</em>. These determine the visual style.</Body>
-				<div>
-					<Button flavor="default-1">Button Text</Button>
-					<Button flavor="default-2">Button Text</Button>
+						<NavListText>Responsive Images</NavListText>
+						<NavListText>Data List</NavListText>
+						<NavListText>Cards</NavListText>
+						<NavListText>Footer</NavListText>
+						<NavListText>Icons</NavListText>
 
-					<CodeBlock language="jsx" style={codeBlockStyle}>{`
-						<Button flavor="default-1">Button Text</Button>
-						<Button flavor="default-2">Button Text</Button>
-					`}</CodeBlock>
-				</div>
-				<Heading style={headingStyle}>Callbacks</Heading>
-				<Body>Pass a method to the onClickHandler property to catch when the button is clicked. </Body>
-				<div>
-					<Button flavor="default-1" onClickHandler={this.demoOnClick.bind(this)}>Button Text</Button>
+						<NavListHeading style={headingSecondaryStyle}>Forms</NavListHeading>
+						<NavListLink to="/singlecolumnformlayout">SingleColumnFormLayout</NavListLink>
+					</VerticalNavigationList>
 
-					<CodeBlock language="jsx" style={codeBlockStyle}>{`
-						<Button flavor="default-1" onClickHandler={this.demoOnClick.bind(this)}>Button Text</Button>
-					`}</CodeBlock>
-				</div>
+				</FixedColumn>
 
-				{/* TYPOGRAPHY */}
-				<SectionHeading style={sectionHeadingStyle}>Typography</SectionHeading>
-				<Heading style={{"marginTop":"1.25rem", "marginBottom":".8rem"}}>Description</Heading>
-				<Body>Some text goes here</Body>
+				<ElasticContent style={elasticContentStyle}>
+					{props.children}
+				</ElasticContent>
 
-				{/* CODEBLOCK */}
-				<SectionHeading style={sectionHeadingStyle}>Code Block</SectionHeading>
-				<Heading style={{"marginTop":"1.25rem", "marginBottom":".8rem"}}>Description</Heading>
-				<Body>A Code Block is for displaying code samples on a page (like the examples on this page). Syntax highlighting is determined by
-				the "language" property. Language options are listed below.</Body>
-				<Body><b>Languages:</b> jsx, html, css, sass, json, python</Body>
-				<Body><b>Note:</b> Code is left-trimmed based on the indentation
-				of the first line. Blank lines are removed from the head and tail of the code.</Body>
-				<div>
-					<CodeBlock language="jsx" style={codeBlockStyle}>{`
-						<CodeBlock language="jsx">{\`
-							<div>
-								<span>Some code here.</span>
-							</div>
-						\`}</CodeBlock>
-					`}</CodeBlock>
-				</div>
-			</PageContainer>
-		);
-	}
+			</FixedColumnLayout>
+		</PageContainer>
+	);
 }

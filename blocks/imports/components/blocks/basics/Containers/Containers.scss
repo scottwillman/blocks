@@ -1,0 +1,30 @@
+@import "../../base/_defaults.scss";
+@import "../../base/_mixins.scss";
+
+
+/**
+*/
+%base-page-container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.page-container {            // mobile first
+	@extend %base-page-container;
+
+	@include desktop {     // alter for desktop
+		max-width: 1170px;
+	}
+}
+
+.page-container-full {
+	@extend %base-page-container;
+}
+
+
+/**
+*/
+.container {
+	width: 100%;
+	margin: 0 auto;
+}

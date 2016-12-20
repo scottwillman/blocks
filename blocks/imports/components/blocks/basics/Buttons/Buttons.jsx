@@ -26,13 +26,14 @@ export const Button = (props) => {
 		case "danger":
 			flavor = flavor+"-danger";
 			break;
-
 		case "hollow":
 			flavor = flavor+"-hollow";
 			break;
 		case "link":
 			flavor = flavor+"-link";
 			break;
+		default:
+			flavor = flavor+"-default-1";
 	}
 
 	let size = "size";

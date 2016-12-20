@@ -7,14 +7,19 @@ b {
 em {
 	font-style: italic;
 }
+a {
+	font-family: $font-a;
+	color: hsl(0,0,25);
+}
+li, p, span, div {
+	font-family: $font-a;
+}
 
 h2.text-section-heading {
 	color: hsl(0,0,25);
 	font-size: 2.25rem;
 	font-family: $font-a;
 	font-weight: 300;
-
-	margin-top: .85rem;
 }
 
 h4.text-heading {
@@ -26,7 +31,7 @@ h4.text-heading {
 	margin-top: .85rem;
 }
 
-p.text-body {
+p.text-paragraph {
 	color: hsl(0,0,25);
 	font-size: 1rem;
 	font-family: $font-a;

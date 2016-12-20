@@ -1,0 +1,15 @@
+@import "../../base/_defaults.scss";
+// @import "../../base/_mixins.scss";
+
+
+table.spreadsheet {
+	border: 1px solid hsl(0,0,90);
+
+	th, td {
+		border: 1px solid hsl(0,0,90);
+		padding: .5rem;
+	}
+	th {
+		font-weight: bolder;
+	}
+}

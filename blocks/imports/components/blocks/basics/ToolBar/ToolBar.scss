@@ -1,0 +1,76 @@
+@import "../../base/_defaults.scss";
+// @import "../../base/_mixins.scss";
+
+
+%tool-bar-base {
+	background-color: hsl(189,20,90);
+	width: 100%;
+	padding: 0;
+	display: inline-block;
+
+	&:after {
+	    content: "";
+	    clear: both;
+	    display: table;
+	}
+
+	.tool-bar-left {
+		float: left;
+		text-align: left;
+	}
+	.tool-bar-center {
+		float: left;
+		text-align: center;
+	}
+	.tool-bar-right {
+		float: right;
+	}
+
+	button, .btn-group {
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+
+.tool-bar-small {
+	@extend %tool-bar-base;
+	height: 2rem;
+	font-size: .85rem;
+
+	ul.horizontal-navigation-list {
+		vertical-align: middle;
+
+		li {
+			padding: .6rem 1rem;
+		}
+	}
+
+	button {
+		margin-right: .25rem;
+	}
+	button.size-small {
+		margin-top: .25rem;
+	}
+}
+.tool-bar-large {
+	@extend %tool-bar-base;
+	height: 3rem;
+
+	ul.horizontal-navigation-list {
+		vertical-align: middle;
+
+		li {
+			padding: 1rem;
+		}
+	}
+
+	button {
+		margin-right: .25rem;
+	}
+	button.size-small {
+		margin-top: .75rem;
+	}
+	button.size-medium {
+		margin-top: .35rem;
+	}
+}
