@@ -27,14 +27,18 @@ div.single-column-form-layout {
 		}
 		input.input-text {
 			border-color: hsl(0,0,87);
+			// color: hsl(0,0,20);
 			&:focus {
 				border-color: hsl(206,77,61);
 			}
 		}
 		input.input-text-error {
 			border-color: hsl(0,100,40);
+			// color: hsl(0,100,40);
 			&:focus {
-				border-color: hsl(206,77,61);
+				// color: hsl(0,0,20);
+				// border-color: hsl(206,77,61);
+				border-color: hsl(0,100,40);
 			}
 
 		}

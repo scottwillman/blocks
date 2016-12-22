@@ -25,9 +25,15 @@ export const SingleColumnTextInput = (props) => {
 	return (
 		<div className="input-form-element" style={props.style}>
 			<label htmlFor={props.name}>{props.label}</label>
-			<TextInput className={inputClassName} name={props.name} />
+			<TextInput
+				className={inputClassName}
+				name={props.name}
+				value={props.value}
+				validationCallback={props.validationCallback}
+				doneTypingInterval={props.doneTypingInterval}
+				placeholderText={props.placeholderText}
+			/>
 			<div className="input-form-error">{props.error}</div>
-
 		</div>
 	);
 }

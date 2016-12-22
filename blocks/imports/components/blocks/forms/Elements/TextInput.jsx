@@ -27,7 +27,12 @@ export class TextInput extends React.Component {
 	If so, start a validation watcher. Else, ignore.
 	*/
 	__validationCallbackExists() {
-		return (this.props.hasOwnProperty('validationCallback')) ? true : false;
+		if (this.props.hasOwnProperty('validationCallback')) {
+			if (this.props.validationCallback) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -81,7 +86,9 @@ export class TextInput extends React.Component {
 	}
 
 
-
+	/**
+	Might be cool to add an onBlur event here too.
+	*/
 	render() {
 		return(
 			<div>
@@ -95,6 +102,7 @@ export class TextInput extends React.Component {
 					onChange={this.onChangeHandler.bind(this)}
 					autoComplete='off'
 					onKeyUp={this.__validationCallbackExists() ? this.__validationWatcher.bind(this) : null}
+					placeholder={this.props.placeholderText}
 				/>
 			</div>
 		);
@@ -106,6 +114,7 @@ TextInput.propTypes = {
 	validationCallback: React.PropTypes.func,
 	errorMessage: React.PropTypes.string,
 	doneTypingInterval: React.PropTypes.number,
+	placeholderText: React.PropTypes.string,
 }
 TextInput.defaultProps = {
 	doneTypingInterval: 1000,
@@ -128,12 +137,12 @@ Allows to toggle between an form input and static text.
 // 		return element;
 // 	}
 // }
-export const ToggleStaticTextInput = (props) => {
-
-	if (props.isEditing) {
-		return <TextInput {...props} />
-	} else {
-		return <div>{props.value}</div>
-	}
-
-}
+// export const ToggleStaticTextInput = (props) => {
+//
+// 	if (props.isEditing) {
+// 		return <TextInput {...props} />
+// 	} else {
+// 		return <div>{props.value}</div>
+// 	}
+//
+// }
