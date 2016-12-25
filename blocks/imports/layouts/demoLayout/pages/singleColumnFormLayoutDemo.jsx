@@ -24,7 +24,7 @@ export class SingleColumnFormLayoutDemo extends React.Component {
 	textInputValidationCallback(name, value) {
 		let curState = this.state;
 		if (value.indexOf('awesome') === -1) {
-			curState.formErrors[name] = "Tell me I'm awesome.";
+			curState.formErrors[name] = "Tell me I'm awesome and I'll go away.";
 		}  else {
 			curState.formErrors[name] = '';
 		}
@@ -37,7 +37,7 @@ export class SingleColumnFormLayoutDemo extends React.Component {
 			"marginBottom": ".8rem",
 		}
 		const demoContainer = {
-			"marginTop": "1.5rem",
+			"marginTop": ".5rem",
 			"marginLeft": 0,
 			"width": "50%",
 		}
@@ -48,15 +48,16 @@ export class SingleColumnFormLayoutDemo extends React.Component {
 		return(
 			<Container>
 				<SectionHeading>SingleColumnFormLayout</SectionHeading>
-				<Heading style={{"marginTop":"1.25rem", "marginBottom":".8rem"}}>Description</Heading>
-				<Paragraph>Tags can be used for all kinds of stuff. See all available colors in the demo below.</Paragraph>
-				<Paragraph><Tag flavor="orange-dark">TO DO</Tag>Need to add icon support and a possible close button with callback.</Paragraph>
+				<Paragraph>The <em>SingleColumnFormLayout</em> is a standard best-practice vertically stacked form layout. All subsequent inputs can be children of this layout.</Paragraph>
+				<Heading style={{"marginTop":"1.25rem", "marginBottom":".8rem"}}>SingleColumnTextInput</Heading>
+				<Paragraph>Standard text input with hooks for validation and feedback.</Paragraph>
 
 				<Container style={demoContainer}>
 					<SingleColumnFormLayout>
-						<SingleColumnTextInput label="First Input" name="first_input" error="" placeholderText="Placeholder" />
-						<SingleColumnTextInput label="Second Input" name="second_input" error="" value="This is something awesome."/>
-						<SingleColumnTextInput label="Third Input" name="third_input" error="I feel so empty inside."/>
+						<SingleColumnTextInput label="First Input" helpText="Empty with placeholder value" name="first_input" placeholderText="Placeholder" />
+						<SingleColumnTextInput label="Second Input" helpText="With default value" name="second_input" value="This is something awesome." />
+						<SingleColumnTextInput label="Third Input" helpText="Error State" name="third_input" errorMessage="I feel so empty inside." />
+						<SingleColumnTextInput label="Third Input" helpText="Successful state" name="third_input"successMessage="Nom nom nom" value="Cookies!!!" />
 					</SingleColumnFormLayout>
 				</Container>
 
@@ -67,9 +68,10 @@ export class SingleColumnFormLayoutDemo extends React.Component {
 
 						<Container style={demoContainer}>
 							<SingleColumnFormLayout>
-								<SingleColumnTextInput label="First Input" name="first_input" error="" placeholderText="Placeholder" />
-								<SingleColumnTextInput label="Second Input" name="second_input" error="" value="This is something awesome."/>
-								<SingleColumnTextInput label="Third Input" name="third_input" error="I feel so empty inside."/>
+								<SingleColumnTextInput label="First Input" helpText="Empty with placeholder value" name="first_input" placeholderText="Placeholder" />
+								<SingleColumnTextInput label="Second Input" helpText="With default value" name="second_input" value="This is something awesome." />
+								<SingleColumnTextInput label="Third Input" helpText="Error State" name="third_input" errorMessage="I feel so empty inside." />
+								<SingleColumnTextInput label="Third Input" helpText="Successful state" name="third_input"successMessage="Nom nom nom" value="Cookies!!!" />
 							</SingleColumnFormLayout>
 						</Container>
 					`}</CodeBlock>
@@ -82,7 +84,7 @@ export class SingleColumnFormLayoutDemo extends React.Component {
 
 				<Container style={demoContainer}>
 					<SingleColumnFormLayout>
-						<SingleColumnTextInput label="Text Input With Validation" name="text_input" error={this.state.formErrors.text_input} validationCallback={this.textInputValidationCallback.bind(this)} />
+						<SingleColumnTextInput label="Text Input With Validation" name="text_input" errorMessage={this.state.formErrors.text_input} validationCallback={this.textInputValidationCallback.bind(this)} />
 					</SingleColumnFormLayout>
 				</Container>
 
@@ -91,7 +93,7 @@ export class SingleColumnFormLayoutDemo extends React.Component {
 						import { SingleColumnFormLayout, SingleColumnTextInput } from '/imports/components/blocks/forms/Layouts/SingleColumnFormLayout/SingleColumnFormLayout.jsx';
 
 
-						export class SingleColumnFormLayoutDemo extends React.Component {
+						export class SingleColumnForm extends React.Component {
 
 							constructor(props) {
 								super(props);
@@ -106,7 +108,7 @@ export class SingleColumnFormLayoutDemo extends React.Component {
 							textInputValidationCallback(name, value) {
 								let curState = this.state;
 								if (value.indexOf('awesome') === -1) {
-									curState.formErrors[name] = "Tell me I'm awesome.";
+									curState.formErrors[name] = "Tell me I'm awesome and I'll go away.";
 								}  else {
 									curState.formErrors[name] = '';
 								}

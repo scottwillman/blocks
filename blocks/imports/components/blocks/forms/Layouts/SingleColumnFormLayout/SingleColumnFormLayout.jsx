@@ -20,11 +20,16 @@ export const SingleColumnFormLayout = (props) => {
 export const SingleColumnTextInput = (props) => {
 
 	let inputClassName = "input-text";
-	if (props.error) inputClassName = "input-text-error";
+	if (props.errorMessage) {
+		inputClassName = "input-text-error";
+	} else if (props.successMessage) {
+		inputClassName = "input-text-success";
+	}
 
 	return (
 		<div className="input-form-element" style={props.style}>
 			<label htmlFor={props.name}>{props.label}</label>
+			<span className="input-text-help">{props.helpText}</span>
 			<TextInput
 				className={inputClassName}
 				name={props.name}
@@ -33,7 +38,10 @@ export const SingleColumnTextInput = (props) => {
 				doneTypingInterval={props.doneTypingInterval}
 				placeholderText={props.placeholderText}
 			/>
-			<div className="input-form-error">{props.error}</div>
+			{props.errorMessage ?
+				<div className="message-text-error">{props.errorMessage}</div> :
+				<div className="message-text-success">{props.successMessage}</div>
+			}
 		</div>
 	);
 }

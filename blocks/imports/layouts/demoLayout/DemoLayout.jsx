@@ -73,6 +73,7 @@ export const DemoLayout = (props) => {
 						<NavListText>Icons</NavListText>
 
 						<NavListHeading style={headingSecondaryStyle}>Forms</NavListHeading>
+						<NavListLink to="/kitchensinkformsdemo">Forms Demo</NavListLink>
 						<NavListLink to="/singlecolumnformlayout">SingleColumnFormLayout</NavListLink>
 					</VerticalNavigationList>
 
