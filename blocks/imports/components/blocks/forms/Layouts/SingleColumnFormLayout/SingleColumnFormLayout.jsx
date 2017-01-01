@@ -8,40 +8,55 @@ import './SingleColumnFormLayout.scss';
 
 export const SingleColumnFormLayout = (props) => {
 
-	return (
-		<div className="single-column-form-layout" style={props.style}>
-			{props.children}
-		</div>
-	);
+	let action = "#";
+	if (props.action) action = props.action;
 
+	return (
+		<form className="single-column-form-layout" style={props.style} action={action}>
+			{props.children}
+		</form>
+	);
 }
 
 
-export const SingleColumnTextInput = (props) => {
+// export const SingleColumnTextInput = (props) => {
+export class SingleColumnTextInput extends React.Component {
 
-	let inputClassName = "input-text";
-	if (props.errorMessage) {
-		inputClassName = "input-text-error";
-	} else if (props.successMessage) {
-		inputClassName = "input-text-success";
+	hasValueChanged() {
+		return this.refs.input.hasValueChanged();
 	}
 
-	return (
-		<div className="input-form-element" style={props.style}>
-			<label htmlFor={props.name}>{props.label}</label>
-			<span className="input-text-help">{props.helpText}</span>
-			<TextInput
-				className={inputClassName}
-				name={props.name}
-				value={props.value}
-				validationCallback={props.validationCallback}
-				doneTypingInterval={props.doneTypingInterval}
-				placeholderText={props.placeholderText}
-			/>
-			{props.errorMessage ?
-				<div className="message-text-error">{props.errorMessage}</div> :
-				<div className="message-text-success">{props.successMessage}</div>
-			}
-		</div>
-	);
+	getValue() {
+		return this.refs.input.getValue();
+	}
+
+	render() {
+
+		let inputClassName = "input-text";
+		if (this.props.errorMessage) {
+			inputClassName = "input-text-error";
+		} else if (this.props.successMessage) {
+			inputClassName = "input-text-success";
+		}
+
+		return (
+			<div className="input-form-element" style={this.props.style}>
+				<label htmlFor={this.props.name}>{this.props.label}</label>
+				<span className="input-text-help">{this.props.helpText}</span>
+				<TextInput
+					ref="input"
+					className={inputClassName}
+					name={this.props.name}
+					value={this.props.value}
+					validationCallback={this.props.validationCallback}
+					doneTypingInterval={this.props.doneTypingInterval}
+					placeholderText={this.props.placeholderText}
+				/>
+				{this.props.errorMessage ?
+					<div className="message-text-error">{this.props.errorMessage}</div> :
+					<div className="message-text-success">{this.props.successMessage}</div>
+				}
+			</div>
+		);
+	}
 }

@@ -69,12 +69,18 @@ export const DemoLayout = (props) => {
 						<NavListText>Responsive Images</NavListText>
 						<NavListText>Data List</NavListText>
 						<NavListText>Cards</NavListText>
-						<NavListText>Footer</NavListText>
 						<NavListText>Icons</NavListText>
+						<NavListText>Modal</NavListText>
+						<NavListText>Dropdown</NavListText>
+						<NavListText>Message</NavListText>
 
 						<NavListHeading style={headingSecondaryStyle}>Forms</NavListHeading>
+						<NavListLink to="/fileuploadformdemo">File Upload</NavListLink>
 						<NavListLink to="/kitchensinkformsdemo">Forms Demo</NavListLink>
 						<NavListLink to="/singlecolumnformlayout">SingleColumnFormLayout</NavListLink>
+						<NavListText>Form</NavListText>
+						<NavListText>TextInput</NavListText>
+						<NavListText>FileUpload</NavListText>
 					</VerticalNavigationList>
 
 				</FixedColumn>

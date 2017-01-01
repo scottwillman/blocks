@@ -15,6 +15,7 @@ import { ToolBarDemo } from '/imports/layouts/demoLayout/pages/toolBarDemo.jsx';
 import { TagsDemo } from '/imports/layouts/demoLayout/pages/tagsDemo.jsx';
 import { SingleColumnFormLayoutDemo } from '/imports/layouts/demoLayout/pages/singleColumnFormLayoutDemo.jsx';
 import { KitchenSinkFormDemo } from '/imports/layouts/demoLayout/pages/kitchenSinkFormDemo.jsx';
+import { FileUploadFormDemo } from '/imports/layouts/demoLayout/pages/fileUploadFormDemo.jsx';
 
 
 Meteor.startup(() => {
@@ -33,6 +34,7 @@ Meteor.startup(() => {
 				<Route path="tags" component={TagsDemo} />
 				<Route path="singlecolumnformlayout" component={SingleColumnFormLayoutDemo} />
 				<Route path="kitchensinkformsdemo" component={KitchenSinkFormDemo} />
+				<Route path="fileuploadformdemo" component={FileUploadFormDemo} />
 			</Route>
 		</Router>
 	), document.getElementById('app'));

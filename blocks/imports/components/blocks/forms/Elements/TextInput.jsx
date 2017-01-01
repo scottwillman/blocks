@@ -79,7 +79,9 @@ export class TextInput extends React.Component {
 
 	/**
 	This is called by the parent form via `this.refs.[componentRef].hasChanged()`.
-	It is to help determine if data from this input should be submitted or not.
+	It is to help determine if data from this input should be submitted or not. That is,
+	if a value is pre-populated in an input from the DB and it hasn't changed, it shouldn't be
+	re-posted to the DB.
 	*/
 	hasValueChanged() {
 		return (this.state.value === this.state.originalValue) ? false : true;
