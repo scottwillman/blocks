@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-export class TextInput extends React.Component {
+export class BaseTextInput extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -110,7 +110,7 @@ export class TextInput extends React.Component {
 		);
 	}
 }
-TextInput.propTypes = {
+BaseTextInput.propTypes = {
 	name: React.PropTypes.string.isRequired,
 	value: React.PropTypes.string,
 	validationCallback: React.PropTypes.func,
@@ -118,33 +118,6 @@ TextInput.propTypes = {
 	doneTypingInterval: React.PropTypes.number,
 	placeholderText: React.PropTypes.string,
 }
-TextInput.defaultProps = {
+BaseTextInput.defaultProps = {
 	doneTypingInterval: 1000,
 }
-
-
-/*
-Higher Order Component
-Allows to toggle between an form input and static text.
-*/
-// export class ToggleStaticTextInput extends React.Component {
-//
-// 	constructor(props) {
-// 		super(props);
-// 		this.input = <TextInput {...props} />;
-// 	}
-//
-// 	render() {
-// 		let element = (this.props.isEditing) ? this.input : <div>{this.props.value}</div>
-// 		return element;
-// 	}
-// }
-// export const ToggleStaticTextInput = (props) => {
-//
-// 	if (props.isEditing) {
-// 		return <TextInput {...props} />
-// 	} else {
-// 		return <div>{props.value}</div>
-// 	}
-//
-// }

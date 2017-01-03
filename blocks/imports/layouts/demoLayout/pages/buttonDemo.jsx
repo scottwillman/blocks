@@ -63,7 +63,7 @@ export class ButtonDemo extends React.Component {
 				<Heading style={headingStyle}>Callbacks</Heading>
 				<Paragraph>Pass a method to the onClickHandler property to catch when the button is clicked. </Paragraph>
 				<Container>
-					<Button flavor="default-1" onClickHandler={this.demoOnClick.bind(this)}>Button Text</Button>
+					<Button onClickHandler={this.demoOnClick.bind(this)}>Button Text</Button>
 
 					<CodeBlock language="jsx" style={codeBlockStyle}>{`
 							<Button flavor="default-1" onClickHandler={this.demoOnClick.bind(this)}>Button Text</Button>
@@ -73,7 +73,7 @@ export class ButtonDemo extends React.Component {
 				<Heading style={headingStyle}>Submit Buttons</Heading>
 				<Paragraph>Use the <em>isSubmit</em> property to specify this button should be a <em>submit</em> type button.</Paragraph>
 				<Container>
-					<Button flavor="default-1" isSubmit={true} onClickHandler={this.demoOnClick.bind(this)}>Submit</Button>
+					<Button isSubmit={true} onClickHandler={this.demoOnClick.bind(this)}>Submit</Button>
 
 					<CodeBlock language="jsx" style={codeBlockStyle}>{`
 							<Button flavor="default-1" isSubmit={true} onClickHandler={this.demoOnClick.bind(this)}>Submit</Button>
@@ -82,7 +82,7 @@ export class ButtonDemo extends React.Component {
 
 				<Heading style={headingStyle}>Button Groups</Heading>
 				<Paragraph>Stuff buttons into a button group and it'll take care of mushing them together.</Paragraph>
-				<Paragraph><Tag flavor="orange-dark">TO DO</Tag>Would be cool to control button sizing from the <em>ButtonGroup</em> level.</Paragraph>
+				<Paragraph><Tag>TO DO</Tag>Would be cool to control button sizing from the <em>ButtonGroup</em> level.</Paragraph>
 				<Container>
 					<ButtonGroup>
 						<Button>Button A</Button>

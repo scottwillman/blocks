@@ -1,0 +1,20 @@
+@import "../../basics/Buttons/Buttons.scss";
+
+
+div.file-input {
+
+	div.input {
+		display: inline-block;
+	}
+	div.filename {
+		display: inline-block;
+		font-size: .9rem;
+	}
+
+	label.default-1 { @extend button.default-1; }
+	label.default-2 { @extend button.default-2; }
+
+	label.small  { @extend button.small; }
+	label.medium { @extend button.medium; }
+	label.large  { @extend button.large; }
+}

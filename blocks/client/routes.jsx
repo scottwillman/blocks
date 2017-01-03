@@ -13,9 +13,8 @@ import { HorizontalNavigationListDemo } from '/imports/layouts/demoLayout/pages/
 import { SpreadsheetDemo } from '/imports/layouts/demoLayout/pages/spreadsheetDemo.jsx';
 import { ToolBarDemo } from '/imports/layouts/demoLayout/pages/toolBarDemo.jsx';
 import { TagsDemo } from '/imports/layouts/demoLayout/pages/tagsDemo.jsx';
-import { SingleColumnFormLayoutDemo } from '/imports/layouts/demoLayout/pages/singleColumnFormLayoutDemo.jsx';
-import { KitchenSinkFormDemo } from '/imports/layouts/demoLayout/pages/kitchenSinkFormDemo.jsx';
-import { FileUploadFormDemo } from '/imports/layouts/demoLayout/pages/fileUploadFormDemo.jsx';
+import { TextInputDemo } from '/imports/layouts/demoLayout/pages/textInputDemo.jsx';
+import { FileInputDemo } from '/imports/layouts/demoLayout/pages/fileInputDemo.jsx';
 
 
 Meteor.startup(() => {
@@ -32,9 +31,8 @@ Meteor.startup(() => {
 				<Route path="spreadsheet" component={SpreadsheetDemo} />
 				<Route path="toolbar" component={ToolBarDemo} />
 				<Route path="tags" component={TagsDemo} />
-				<Route path="singlecolumnformlayout" component={SingleColumnFormLayoutDemo} />
-				<Route path="kitchensinkformsdemo" component={KitchenSinkFormDemo} />
-				<Route path="fileuploadformdemo" component={FileUploadFormDemo} />
+				<Route path="textinput" component={TextInputDemo} />
+				<Route path="fileinputdemo" component={FileInputDemo} />
 			</Route>
 		</Router>
 	), document.getElementById('app'));

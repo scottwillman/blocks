@@ -1,26 +1,21 @@
 import React from 'react';
 
-import { TextInput } from '../../Elements/TextInput.jsx';
+import { TextInput } from '../../BaseElements/BaseTextInput.jsx';
 
 import './SingleColumnFormLayout.scss';
 
 
 
 export const SingleColumnFormLayout = (props) => {
-
-	let action = "#";
-	if (props.action) action = props.action;
-
 	return (
-		<form className="single-column-form-layout" style={props.style} action={action}>
+		<form className="single-column-form-layout" style={props.style} action="#" handleOnSubmit={props.handleOnSubmit}>
 			{props.children}
 		</form>
 	);
 }
 
 
-// export const SingleColumnTextInput = (props) => {
-export class SingleColumnTextInput extends React.Component {
+export class SCTextInput extends React.Component {
 
 	hasValueChanged() {
 		return this.refs.input.hasValueChanged();
@@ -43,7 +38,7 @@ export class SingleColumnTextInput extends React.Component {
 			<div className="input-form-element" style={this.props.style}>
 				<label htmlFor={this.props.name}>{this.props.label}</label>
 				<span className="input-text-help">{this.props.helpText}</span>
-				<TextInput
+				<BaseTextInput
 					ref="input"
 					className={inputClassName}
 					name={this.props.name}

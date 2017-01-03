@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-export class FileUploadInput extends React.Component {
+export class BaseFileInput extends React.Component {
 
 	// constructor(props) {
 	// 	super(props);
@@ -23,7 +23,7 @@ export class FileUploadInput extends React.Component {
 	// 		}
 	// 	}
 	// }
-
+	//
 	// handleUpload(e) {
 	//
 	// 	const file = this.state.file;
@@ -55,17 +55,25 @@ export class FileUploadInput extends React.Component {
 	render() {
 
 		const labelStyle = {
-			// border: "1px solid #ccc",
+			border: "1px solid #ccc",
 			display: "inline-block",
-			// padding: ".5rem 1rem",
+			padding: ".5rem 1rem",
 			cursor: "pointer",
 		}
 
 		return (
 			<div>
-				<label htmlFor="file-upload-input" style={labelStyle}>Select File...</label>
+				<label htmlFor="file-upload-input" style={labelStyle}>{this.props.children}</label>
 				<input id="file-upload-input" style={{'display':'none'}} type="file" onChange={this.props.handleFileChange.bind(this)} />
 			</div>
 		);
 	}
+}
+BaseFileInput.propTypes = {
+	// name: React.PropTypes.string.isRequired,
+	// value: React.PropTypes.string,
+	handleFileChange: React.PropTypes.func.isRequired,
+	// errorMessage: React.PropTypes.string,
+	// doneTypingInterval: React.PropTypes.number,
+	// placeholderText: React.PropTypes.string,
 }

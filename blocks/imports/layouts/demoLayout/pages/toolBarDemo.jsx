@@ -7,7 +7,7 @@ import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock
 import { ToolBar, ToolBarContainer } from '/imports/components/blocks/basics/ToolBar/ToolBar.jsx';
 import { Button, ButtonGroup } from '/imports/components/blocks/basics/Buttons/Buttons.jsx';
 import { HorizontalNavigationList, NavListLink } from '/imports/components/blocks/basics/NavigationLists/NavigationLists.jsx';
-
+import { Tag } from '/imports/components/blocks/basics/Tags/Tags.jsx';
 
 export const ToolBarDemo = (props) => {
 
@@ -30,6 +30,7 @@ export const ToolBarDemo = (props) => {
 			<Heading style={{"marginTop":"1.25rem", "marginBottom":".8rem"}}>Description</Heading>
 			<Paragraph>A <em>ToolBar</em> component is designed to live at the top of a container or the body of a webpage. It can be used for navigation
 			or any set of links and buttons for page or application. There are two sizes of <em>ToolBar</em>: Large and Small</Paragraph>
+			<Paragraph><Tag flavor="red-dark">TODO</Tag> Broke the vertical positioning of the buttons</Paragraph>
 
 			<Container style={demoContainerStyle}>
 				<ToolBar size="large">

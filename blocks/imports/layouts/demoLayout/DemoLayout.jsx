@@ -7,14 +7,7 @@ import { PageContainer } from '/imports/components/blocks/basics/Containers/Cont
 import { FixedColumnLayout, FixedColumn, ElasticContent } from '/imports/components/blocks/basics/FixedColumnLayout/FixedColumnLayout.jsx';
 import { HorizontalNavigationList, VerticalNavigationList, NavListHeading, NavListLink, NavListText} from '/imports/components/blocks/basics/NavigationLists/NavigationLists.jsx';
 import { Button, ButtonGroup } from '/imports/components/blocks/basics/Buttons/Buttons.jsx';
-
-// import { ButtonDemo } from './pages/buttonDemo.jsx';
-// import { TypographyDemo } from './pages/typographyDemo.jsx';
-// import { CodeBlockDemo } from './pages/codeBlockDemo.jsx';
-// import { FixedColumnLayoutDemo } from './pages/fixedColumnLayoutDemo.jsx';
 import { ToolBar, ToolBarContainer } from '/imports/components/blocks/basics/ToolBar/ToolBar.jsx';
-
-import { Link } from 'react-router';
 
 
 export const DemoLayout = (props) => {
@@ -39,15 +32,6 @@ export const DemoLayout = (props) => {
 
 	return (
 		<PageContainer fullWidth={true}>
-			<ToolBar size="small" style={toolBarStyle}>
-				<ToolBarContainer side="left">
-					<HorizontalNavigationList>
-						<NavListLink to="/buttons">Buttons</NavListLink>
-						<NavListLink to="/toolbar">ToolBar</NavListLink>
-					</HorizontalNavigationList>
-
-				</ToolBarContainer>
-			</ToolBar>
 
 			<FixedColumnLayout style={fixedColumnLayoutStyle}>
 
@@ -75,12 +59,11 @@ export const DemoLayout = (props) => {
 						<NavListText>Message</NavListText>
 
 						<NavListHeading style={headingSecondaryStyle}>Forms</NavListHeading>
-						<NavListLink to="/fileuploadformdemo">File Upload</NavListLink>
-						<NavListLink to="/kitchensinkformsdemo">Forms Demo</NavListLink>
-						<NavListLink to="/singlecolumnformlayout">SingleColumnFormLayout</NavListLink>
-						<NavListText>Form</NavListText>
-						<NavListText>TextInput</NavListText>
-						<NavListText>FileUpload</NavListText>
+
+						<NavListLink to="/textinput">TextInput</NavListLink>
+						<NavListLink to="/fileInputDemo">FileInput</NavListLink>
+						<NavListText>RadioGroup</NavListText>
+						<NavListText>SelectList</NavListText>
 					</VerticalNavigationList>
 
 				</FixedColumn>
