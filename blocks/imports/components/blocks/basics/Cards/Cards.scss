@@ -1,0 +1,33 @@
+@import "../../base/_defaults.scss";
+// @import "../../base/_mixins.scss";
+
+div.card {
+	border: 1px solid hsl(0,0,85);
+	border-radius: 3px;
+	margin-right: .5rem;
+	display: inline-block;
+	vertical-align: top;
+
+	div.card-banner {
+		width: 100%;
+		background-color: hsl(0,0,96);
+		color: hsl(0,0,25);
+		padding: .75rem;
+	}
+
+	div.card-heading {
+		// padding: 1rem 1rem 0;
+		color: hsl(0,0,25);
+		font-size: 1.35rem;
+		font-family: $font-a;
+		font-weight: 400;
+	}
+
+	div.card-paragraph {
+		padding: 1rem;
+		color: hsl(0,0,25);
+		font-size: 1rem;
+		font-family: $font-a;
+		line-height: 1.25rem;
+	}
+}

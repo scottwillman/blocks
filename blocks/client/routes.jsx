@@ -15,6 +15,7 @@ import { ToolBarDemo } from '/imports/layouts/demoLayout/pages/toolBarDemo.jsx';
 import { TagsDemo } from '/imports/layouts/demoLayout/pages/tagsDemo.jsx';
 import { TextInputDemo } from '/imports/layouts/demoLayout/pages/textInputDemo.jsx';
 import { FileInputDemo } from '/imports/layouts/demoLayout/pages/fileInputDemo.jsx';
+import { CardsDemo } from '/imports/layouts/demoLayout/pages/cardsDemo.jsx';
 
 
 Meteor.startup(() => {
@@ -32,7 +33,8 @@ Meteor.startup(() => {
 				<Route path="toolbar" component={ToolBarDemo} />
 				<Route path="tags" component={TagsDemo} />
 				<Route path="textinput" component={TextInputDemo} />
-				<Route path="fileinputdemo" component={FileInputDemo} />
+				<Route path="fileinput" component={FileInputDemo} />
+				<Route path="cards" component={CardsDemo} />
 			</Route>
 		</Router>
 	), document.getElementById('app'));

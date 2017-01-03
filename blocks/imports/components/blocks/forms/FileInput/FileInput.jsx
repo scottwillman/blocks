@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { BaseFileInput } from '/imports/components/blocks/forms/BaseElements/BaseFileInput.jsx';
-
 import './FileInput.scss';
+
 
 export class FileInput extends React.Component {
 

@@ -49,10 +49,11 @@ export const DemoLayout = (props) => {
 						<NavListLink to="/spreadsheet">Spreadsheet</NavListLink>
 						<NavListLink to="/toolbar">ToolBar</NavListLink>
 						<NavListLink to="/tags">Tags</NavListLink>
+						<NavListLink to="/cards">Cards</NavListLink>
 
 						<NavListText>Responsive Images</NavListText>
 						<NavListText>Data List</NavListText>
-						<NavListText>Cards</NavListText>
+						<NavListText>Grid</NavListText>
 						<NavListText>Icons</NavListText>
 						<NavListText>Modal</NavListText>
 						<NavListText>Dropdown</NavListText>
@@ -61,7 +62,7 @@ export const DemoLayout = (props) => {
 						<NavListHeading style={headingSecondaryStyle}>Forms</NavListHeading>
 
 						<NavListLink to="/textinput">TextInput</NavListLink>
-						<NavListLink to="/fileInputDemo">FileInput</NavListLink>
+						<NavListLink to="/fileinput">FileInput</NavListLink>
 						<NavListText>RadioGroup</NavListText>
 						<NavListText>SelectList</NavListText>
 					</VerticalNavigationList>
