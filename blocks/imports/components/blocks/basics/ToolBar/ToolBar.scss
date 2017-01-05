@@ -26,9 +26,22 @@
 		float: right;
 	}
 
+	.tool-bar-left, .tool-bar-right {
+		position: relative;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+
 	button, .btn-group {
 		display: inline-block;
-		vertical-align: top;
+		vertical-align: middle;
+		// position: relative;
+		// top: 50%;
+		// -webkit-transform: translateY(-50%);
+		// -ms-transform: translateY(-50%);
+		// transform: translateY(-50%);
 	}
 }
 

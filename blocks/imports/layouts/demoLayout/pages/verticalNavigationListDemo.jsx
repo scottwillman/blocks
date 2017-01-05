@@ -36,6 +36,9 @@ export const VerticalNavigationListDemo = (props) => {
 						<NavListLink to="/containers">Containers</NavListLink>
 						<NavListLink to="/fixedcolumnlayout">FixedColumnLayout</NavListLink>
 						<NavListLink to="/verticalnavigationlist">VerticalNavigationList</NavListLink>
+
+						<NavListText>RadioGroup</NavListText>
+						<NavListText>SelectList</NavListText>
 					</VerticalNavigationList>
 				`}</CodeBlock>
 			</Container>

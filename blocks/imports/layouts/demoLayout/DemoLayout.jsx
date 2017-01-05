@@ -50,8 +50,8 @@ export const DemoLayout = (props) => {
 						<NavListLink to="/toolbar">ToolBar</NavListLink>
 						<NavListLink to="/tags">Tags</NavListLink>
 						<NavListLink to="/cards">Cards</NavListLink>
+						<NavListLink to="/images">Images</NavListLink>
 
-						<NavListText>Responsive Images</NavListText>
 						<NavListText>Data List</NavListText>
 						<NavListText>Grid</NavListText>
 						<NavListText>Icons</NavListText>

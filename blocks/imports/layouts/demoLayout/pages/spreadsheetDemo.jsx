@@ -5,7 +5,7 @@ import { Container } from '/imports/components/blocks/basics/Containers/Containe
 import { SectionHeading, Heading, Paragraph } from '/imports/components/blocks/basics/Typography/Typography.jsx';
 import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock.jsx';
 import { Spreadsheet } from '/imports/components/blocks/basics/Spreadsheet/Spreadsheet.jsx';
-
+import { Tag } from '/imports/components/blocks/basics/Tags/Tags.jsx';
 
 
 export const SpreadsheetDemo = (props) => {
@@ -33,6 +33,7 @@ export const SpreadsheetDemo = (props) => {
 
 			<Heading style={{"marginTop":"1.25rem", "marginBottom":".8rem"}}>Description</Heading>
 			<Paragraph>A <em>Spreadsheet</em> component is magical.</Paragraph>
+			<Paragraph><Tag flavor="orange-dark">TODO</Tag> Revamp this component to have child cmpts in order to have different cell types.</Paragraph>
 			<Container>
 				<CodeBlock language="jsx" style={codeBlockStyle}>{`
 					import { Spreadsheet } from '/imports/components/blocks/basics/Spreadsheet/Spreadsheet.jsx';
