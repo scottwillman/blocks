@@ -1,52 +1,56 @@
 
 import React from 'react';
 
-import './DemoLayout.scss';
+// import './DemoLayout.scss';
 
-import { PageContainer } from '/imports/components/blocks/basics/Containers/Containers.jsx';
-import { FixedColumnLayout, FixedColumn, ElasticContent } from '/imports/components/blocks/basics/FixedColumnLayout/FixedColumnLayout.jsx';
+import { Layout, Header, Sidebar, Content, Footer } from '/imports/components/blocks/basics/Layout/Layout.jsx';
 import { HorizontalNavigationList, VerticalNavigationList, NavListHeading, NavListLink, NavListText} from '/imports/components/blocks/basics/NavigationLists/NavigationLists.jsx';
-import { Button, ButtonGroup } from '/imports/components/blocks/basics/Buttons/Buttons.jsx';
-import { ToolBar, ToolBarContainer } from '/imports/components/blocks/basics/ToolBar/ToolBar.jsx';
 
 
 export const DemoLayout = (props) => {
 
-	const toolBarStyle = {
-		backgroundColor: "#f2f2f2",
-	}
-	const fixedColumnStyle = {
-		"paddingLeft": "0",
-		"paddingRight": "0",
-	}
-	const fixedColumnLayoutStyle = {
-		"paddingTop": "1.5rem",
-	}
-	const elasticContentStyle = {
-		"padding": "0 1.5rem",
-		"borderLeft": "solid 1px rgb(235,235,235)",
-	}
+	// const toolBarStyle = {
+	// 	backgroundColor: "#f2f2f2",
+	// }
+	// const fixedColumnStyle = {
+	// 	"paddingLeft": "0",
+	// 	"paddingRight": "0",
+	// }
+	// const fixedColumnLayoutStyle = {
+	// 	"paddingTop": "1.5rem",
+	// }
+	// const elasticContentStyle = {
+	// 	"padding": "0 1.5rem",
+	// 	"borderLeft": "solid 1px rgb(235,235,235)",
+	// }
 	const headingSecondaryStyle = {
 		"marginTop": "1rem",
+	};
+	const leftSidebarStyle = {
+		"borderRight": "1px solid hsl(0,0%,90%)",
+	};
+	const mainContainerStyle = {
+		"margin": "24px 0",
+	};
+	const pageContentStyle = {
+		"padding": "0 24px",
 	}
 
 	return (
-		<PageContainer fullWidth={true}>
+		<Layout>
+			<Header>Header</Header>
+			<Content style={mainContainerStyle}>
+			{/* <FixedColumnLayout style={fixedColumnLayoutStyle}> */}
 
-			<FixedColumnLayout style={fixedColumnLayoutStyle}>
-
-				<FixedColumn side="left" style={fixedColumnStyle}>
+				<Sidebar style={leftSidebarStyle}>
 
 					<VerticalNavigationList>
 						<NavListHeading>Basic Components</NavListHeading>
+						<NavListLink to="/layout">Layout</NavListLink>
 						<NavListLink to="/buttons">Buttons</NavListLink>
 						<NavListLink to="/typography">Typography</NavListLink>
 						<NavListLink to="/codeblock">CodeBlock</NavListLink>
-						<NavListLink to="/containers">Containers</NavListLink>
-						<NavListLink to="/fixedcolumnlayout">FixedColumnLayout</NavListLink>
-						<NavListLink to="/verticalnavigationlist">VerticalNavigationList</NavListLink>
-						<NavListLink to="/horizontalnavigationlist">HorizontalNavigationList</NavListLink>
-						<NavListLink to="/spreadsheet">Spreadsheet</NavListLink>
+						<NavListLink to="/table">Table</NavListLink>
 						<NavListLink to="/toolbar">ToolBar</NavListLink>
 						<NavListLink to="/tags">Tags</NavListLink>
 						<NavListLink to="/cards">Cards</NavListLink>
@@ -63,17 +67,20 @@ export const DemoLayout = (props) => {
 
 						<NavListLink to="/textinput">TextInput</NavListLink>
 						<NavListLink to="/fileinput">FileInput</NavListLink>
+						<NavListLink to="/select">Select</NavListLink>
+
 						<NavListText>RadioGroup</NavListText>
-						<NavListText>SelectList</NavListText>
 					</VerticalNavigationList>
 
-				</FixedColumn>
+				</Sidebar>
 
-				<ElasticContent style={elasticContentStyle}>
+				<Content style={pageContentStyle}>
 					{props.children}
-				</ElasticContent>
+				</Content>
 
-			</FixedColumnLayout>
-		</PageContainer>
+			</Content>
+			<Footer>Footer</Footer>
+			{/* </FixedColumnLayout> */}
+		</Layout>
 	);
 }

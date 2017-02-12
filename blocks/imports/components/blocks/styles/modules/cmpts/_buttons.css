@@ -1,0 +1,38 @@
+
+.button-flavor-light {
+	background-color: hsl(0,0%,95%);
+	border: 1px solid hsl(0,0%,80%);
+}
+.button-flavor-light:hover  { background-color: hsl(0,0%,98%); }
+.button-flavor-light:active { background-color: hsl(0,0%,90%); }
+.button-flavor-light:focus  { outline: 0; }
+
+
+.button-flavor-dark {
+	background-color: hsl(0,0%,20%);
+	border: 1px solid hsl(0,0%,0%);
+}
+.button-flavor-dark:hover  { background-color: hsl(0,0%,25%); }
+.button-flavor-dark:active { background-color: hsl(0,0%,10%); }
+.button-flavor-dark:focus  { outline: 0; }
+
+
+.button-group {
+	display: inline-block;
+}
+.button-group button:not(:first-child):not(:last-child) {
+	border-radius: 0;
+	border-left: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+.button-group button:last-child {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-left: 0;
+}
+.button-group button:first-child {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	margin-right: 0;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Container } from '/imports/components/blocks/basics/Containers/Containers.jsx';
+import { Container } from '/imports/components/blocks/basics/Container/Container.jsx';
 import { SectionHeading, Heading, Paragraph } from '/imports/components/blocks/basics/Typography/Typography.jsx';
 import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock.jsx';
 import { ToolBar, ToolBarContainer } from '/imports/components/blocks/basics/ToolBar/ToolBar.jsx';
@@ -21,6 +21,9 @@ export const ToolBarDemo = (props) => {
 	const demoContainerStyle = {
 		"marginTop": "1rem",
 	}
+	const rightMarginStyle = {
+		"marginRight": "12px",
+	}
 
 
 	return(
@@ -32,32 +35,32 @@ export const ToolBarDemo = (props) => {
 			or any set of links and buttons for page or application. There are two sizes of <em>ToolBar</em>: Large and Small</Paragraph>
 
 			<Container style={demoContainerStyle}>
-				<ToolBar size="large">
-					<ToolBarContainer side="left">
-						<HorizontalNavigationList>
+				<ToolBar style={{'padding': '8px', 'paddingRight':'22px'}}>
+					<ToolBarContainer>
+						{/* <HorizontalNavigationList>
 							<NavListLink to="/buttons">Buttons</NavListLink>
 							<NavListLink to="/toolbar">ToolBar</NavListLink>
 							<NavListLink to="/horizontalnavigationlist">HorizontalNavigationList</NavListLink>
-						</HorizontalNavigationList>
-
-						<ButtonGroup>
+						</HorizontalNavigationList> */}
+						<Button style={rightMarginStyle}>Single</Button>
+						<ButtonGroup style={rightMarginStyle}>
 							<Button>Left</Button>
 							<Button>Right</Button>
 						</ButtonGroup>
 
-						<Button size="small" flavor="default-2">Left Button</Button>
+						<div>Some words go here!</div>
 					</ToolBarContainer>
-					<ToolBarContainer side="right">
 
-						<ButtonGroup>
+					<ToolBarContainer>
+
+						<ButtonGroup style={rightMarginStyle}>
 							<Button>True</Button>
-							<Button flavor="default-2">False</Button>
+							<Button>False</Button>
 						</ButtonGroup>
 
-						<ButtonGroup>
-							<Button size="small">True</Button>
-							<Button size="small">False</Button>
-						</ButtonGroup>
+						<Button flavor="dark" style={rightMarginStyle}>Left Button</Button>
+
+						<div>Login</div>
 
 					</ToolBarContainer>
 				</ToolBar>
@@ -94,13 +97,13 @@ export const ToolBarDemo = (props) => {
 			</Container>
 
 			<Container style={demoContainerStyle}>
-				<ToolBar size="small">
-					<ToolBarContainer side="left">
-						<HorizontalNavigationList>
+				<ToolBar style={{'padding': '4px'}}>
+					<ToolBarContainer>
+						{/* <HorizontalNavigationList>
 							<NavListLink to="/buttons">Buttons</NavListLink>
 							<NavListLink to="/toolbar">ToolBar</NavListLink>
 							<NavListLink to="/horizontalnavigationlist">HorizontalNavigationList</NavListLink>
-						</HorizontalNavigationList>
+						</HorizontalNavigationList> */}
 
 						<Button size="small">Left Button</Button>
 						<ButtonGroup>
@@ -110,7 +113,7 @@ export const ToolBarDemo = (props) => {
 						</ButtonGroup>
 
 					</ToolBarContainer>
-					<ToolBarContainer side="right">
+					<ToolBarContainer>
 						<ButtonGroup>
 							<Button size="small">Left</Button>
 							<Button size="small" flavor="default-2">Center</Button>

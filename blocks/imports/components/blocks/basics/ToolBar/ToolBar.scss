@@ -3,7 +3,7 @@
 
 
 %tool-bar-base {
-	background-color: hsl(189,20,90);
+	background-color: hsl(0,0,90);
 	width: 100%;
 	padding: 0;
 	display: inline-block;
@@ -29,8 +29,8 @@
 	.tool-bar-left, .tool-bar-right {
 		position: relative;
 		top: 50%;
-		-webkit-transform: translateY(-50%);
-		-ms-transform: translateY(-50%);
+		// -webkit-transform: translateY(-50%);
+		// -ms-transform: translateY(-50%);
 		transform: translateY(-50%);
 	}
 

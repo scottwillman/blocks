@@ -2,7 +2,7 @@ import React from 'react';
 
 import './prism/prism.js';
 import './prism/prism.css';
-import './CodeBlock.scss';
+// import './CodeBlock.scss';
 
 /**
 @size: named size sm, md, lg
@@ -103,9 +103,12 @@ export class CodeBlock extends React.Component {
 
 	render() {
 		let languageClass = "language-"+this.props.language;
+		const classNames = [
+			'border-grey-90',
+		].join(' ');
 
 		return(
-			<pre className="code-block" style={this.props.style}>
+			<pre className={classNames} style={this.props.style}>
 				<code className={languageClass}>
 					{this.trimInputCodeBlock()}
 				</code>

@@ -2,8 +2,6 @@ import React from 'react';
 
 import { BaseTextInput } from '../BaseElements/BaseTextInput.jsx';
 
-import './TextInput.scss';
-
 
 
 export class TextInput extends React.Component {
@@ -18,20 +16,43 @@ export class TextInput extends React.Component {
 
 	render() {
 
-		let inputClassName = "input-text";
+		const labelClassNames = [
+			"disp-inline-block",
+			"margin-t-16",
+		].join(' ');
+
+		const helpClassNames = [
+			"text-grey-60",
+			"font-size-12",
+			"margin-l-12",
+		].join(' ');
+
+		let inputClassNames = [
+			"bg-grey-98",
+			"text-grey-40",
+			"border-1",
+			"pad-8",
+			"margin-t-4",
+			"width-full",
+			"round-4",
+		];
+
 		if (this.props.errorMessage) {
-			inputClassName = "input-text-error";
+			inputClassNames.push("input-text-error");
 		} else if (this.props.successMessage) {
-			inputClassName = "input-text-success";
+			inputClassNames.push("input-text-success");
+		} else {
+			inputClassNames.push("input-text");
 		}
 
+
 		return (
-			<div className="text-input" style={this.props.style}>
-				<label htmlFor={this.props.name}>{this.props.label}</label>
-				<span className="input-text-help">{this.props.helpText}</span>
+			<div style={this.props.style}>
+				<label htmlFor={this.props.name} className={labelClassNames}>{this.props.label}</label>
+				<span className={helpClassNames}>{this.props.helpText}</span>
 				<BaseTextInput
 					ref="input"
-					className={inputClassName}
+					className={inputClassNames.join(' ')}
 					name={this.props.name}
 					value={this.props.value}
 					validationCallback={this.props.validationCallback}
@@ -39,8 +60,8 @@ export class TextInput extends React.Component {
 					placeholderText={this.props.placeholderText}
 				/>
 				{this.props.errorMessage ?
-					<div className="message-text-error">{this.props.errorMessage}</div> :
-					<div className="message-text-success">{this.props.successMessage}</div>
+					<div className="margin-t-4 input-message-text-error">{this.props.errorMessage}</div> :
+					<div className="margin-t-4 input-message-text-success">{this.props.successMessage}</div>
 				}
 			</div>
 		);

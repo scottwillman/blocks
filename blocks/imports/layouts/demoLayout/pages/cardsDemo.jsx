@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Container } from '/imports/components/blocks/basics/Containers/Containers.jsx';
+import { Container } from '/imports/components/blocks/basics/Container/Container.jsx';
 import { SectionHeading, Heading, Paragraph } from '/imports/components/blocks/basics/Typography/Typography.jsx';
 import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock.jsx';
 import { Tag } from '/imports/components/blocks/basics/Tags/Tags.jsx';
@@ -29,8 +29,7 @@ export const CardsDemo = (props) => {
 		"width": "350px",
 	}
 	const toolbarStyle = {
-		"paddingLeft": ".25rem",
-		"paddingRight": ".25rem",
+		"padding": ".2rem .25rem",
 	}
 
 	return(
@@ -38,7 +37,7 @@ export const CardsDemo = (props) => {
 			<SectionHeading>Cards</SectionHeading>
 			<Heading style={{"marginTop":"1.25rem", "marginBottom":".8rem"}}>Description</Heading>
 			<Paragraph>Stuff</Paragraph>
-			<Paragraph><Tag flavor="orange-dark">TO DO</Tag> Rename Cards to Boxes</Paragraph>
+			<Paragraph><Tag flavor="orange">Todo</Tag> Rename Cards to Boxes</Paragraph>
 
 			<Container style={demoContainer}>
 				<Card style={cardStyle}>
@@ -87,12 +86,14 @@ export const CardsDemo = (props) => {
 						</CardBanner>
 						<CardParagraph>...</CardParagraph>
 					</Card>
+
 					<Card style={cardStyle}>
 						<CardBanner>
 							<CardHeading>Card Heading</CardHeading>
 						</CardBanner>
 						<CardParagraph>...</CardParagraph>
 					</Card>
+
 					<Card style={cardStyle}>
 						<CardBanner>
 							<CardHeading>Card Heading</CardHeading>

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './FileInput.scss';
 
 
 export class FileInput extends React.Component {
@@ -34,20 +33,66 @@ export class FileInput extends React.Component {
 	}
 
 	render() {
-		const labelStyle = {
-			display: "inline-block",
-			cursor: "pointer",
-			marginRight: ".5rem",
+
+		let classNames = [
+			'cursor-pointer',
+			'disp-inline-block',
+			'margin-r-6',
+		];
+
+		switch (this.props.flavor) {
+			case 'dark':
+				classNames = classNames.concat([
+					'text-white',
+					'button-flavor-dark',
+				]);
+				break;
+			default:
+				classNames = classNames.concat([
+					'button-flavor-light',
+				]);
+				break;
 		}
-		const labelButtonClassName = this.props.flavor+" "+this.props.size;
+
+
+		switch (this.props.size) {
+			case 'small':
+				classNames = classNames.concat([
+					'font-size-12',
+					'pad-lr-8',
+					'pad-tb-6',
+					'round-3',
+				]);
+				break;
+			case 'large':
+				classNames = classNames.concat([
+					'font-size-18',
+					'pad-lr-20',
+					'pad-tb-12',
+					'round-4',
+				]);
+				break;
+			default: // medium or empty
+				classNames = classNames.concat([
+					'font-size-14',
+					'pad-lr-16',
+					'pad-tb-8',
+					'round-4',
+				]);
+				break;
+		}
+
+		const filenameClassName = [
+			'disp-inline-block',
+		].join(' ');
 
 		return(
 			<div className="file-input">
 
-				<label htmlFor="file-input" className={labelButtonClassName} style={labelStyle}>{this.props.children}</label>
+				<label htmlFor="file-input" className={classNames.join(' ')} style={this.props.style}>{this.props.children}</label>
 				<input id="file-input" style={{'display':'none'}} type="file" onChange={this.handleFileChange.bind(this)} />
 
-				<div className="filename">{this.__showFileName()}</div>
+				<div className={filenameClassName}>{this.__showFileName()}</div>
 			</div>
 		);
 	}

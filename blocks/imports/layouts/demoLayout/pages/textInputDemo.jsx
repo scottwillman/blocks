@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Container } from '/imports/components/blocks/basics/Containers/Containers.jsx';
+import { Container } from '/imports/components/blocks/basics/Container/Container.jsx';
 import { SectionHeading, Heading, Paragraph } from '/imports/components/blocks/basics/Typography/Typography.jsx';
 import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock.jsx';
 import { Tag } from '/imports/components/blocks/basics/Tags/Tags.jsx';
@@ -48,14 +48,14 @@ export class TextInputDemo extends React.Component {
 		return(
 			<Container>
 				<SectionHeading>TextInput</SectionHeading>
-				<Paragraph>Standard text input with hooks for validation and feedback.</Paragraph>
-				<Paragraph><Tag flavor="orange-dark">TODO</Tag> Add multi-line (textarea) functionality</Paragraph>
+				<Paragraph style={{"marginTop":"1.25rem", "marginBottom":".5rem"}}>Standard text input with hooks for validation and feedback.</Paragraph>
+				<Paragraph><Tag flavor="orange">TODO</Tag> Add multi-line (textarea) functionality</Paragraph>
 
 				<Container style={demoContainer}>
 					<TextInput label="First Input" helpText="Empty with placeholder value" name="first_input" placeholderText="Placeholder" />
 					<TextInput label="Second Input" helpText="With default value" name="second_input" value="This is something awesome." />
 					<TextInput label="Third Input" helpText="Error State" name="third_input" errorMessage="I feel so empty inside." />
-					<TextInput label="Third Input" helpText="Successful state" name="third_input"successMessage="Nom nom nom" value="Cookies!!!" />
+					<TextInput label="Fourth Input" helpText="Successful state" name="third_input"successMessage="Nom nom nom" value="Cookies!!!" />
 				</Container>
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Container } from '/imports/components/blocks/basics/Containers/Containers.jsx';
+import { Container } from '/imports/components/blocks/basics/Container/Container.jsx';
 import { SectionHeading, Heading, Paragraph } from '/imports/components/blocks/basics/Typography/Typography.jsx';
 import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock.jsx';
 import { Tag } from '/imports/components/blocks/basics/Tags/Tags.jsx';
@@ -29,7 +29,7 @@ export const FileInputDemo = (props) => {
 			<Paragraph><Tag flavor="orange-dark">TO DO</Tag> Allowable file types, show file size</Paragraph>
 
 			<Container style={demoContainer}>
-				<FileInput flavor="default-1" size="medium">Choose File</FileInput>
+				<FileInput flavor="light" size="medium">Choose File</FileInput>
 			</Container>
 
 			<Container>
