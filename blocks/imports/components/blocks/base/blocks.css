@@ -1,18 +1,5 @@
-/**
-SITE VARS IMPORT
-
-Edit the file below directly to customize your site
-*/
-// @import "defaults.scss";
-// @import "mixins.scss";
-// @import "reset.scss";
-
-/**
-FONT IMPORTS
-If using standard fonts you can comment out the lines below
-*/
-// @import url("https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,latin-ext");
-// @import url("https://fonts.googleapis.com/css?family=Montserrat:400");
+@import "_reset.css";
+@import "_defaults.css";
 
 
 /**
@@ -35,8 +22,4 @@ public
 
 Download them at http://fontawesome.io/
 */
-// @import url("/icons/font-awesome/css/font-awesome.min.css");
-
-
-
-// @import "../basics/Buttons.scss";
+/*// @import url("/icons/font-awesome/css/font-awesome.min.css");*/

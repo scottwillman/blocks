@@ -1,66 +1,56 @@
 import React from 'react';
 
+import { StyleSheet, css } from 'aphrodite/no-important';
+import { theme } from '/imports/components/blocks/base/themes.js';
+
 
 export const Caret = (props) => {
 
 	const size = parseInt(props.size);
 
-	const arrowClassNames = [
-		'w-0',
-		'h-0',
-		'cursor-pointer',
-		props.isActive ? 'border-blue' : 'border-grey-60',
-	].join(' ');
+	const baseEdgeStyle      = (Math.round(size * .7)).toString() + "px solid";
+	const secondaryEdgeStyle = (Math.round(size * .7)).toString() + "px solid transparent";
 
-	const baseEdge = [
-		props.size,
-		"solid",
-	].join(' ');
-
-	const secondaryEdge = [
-		(Math.round(size * .7)).toString() + "px",
-		"solid",
-		"transparent",
-	].join(' ');
-
-	let arrowStyle = null;
+	let edgeStyle = null;
 
 	switch (props.direction) {
 		case "up":
-			arrowStyle = {
-				'borderLeft':   secondaryEdge,
-				'borderRight':  secondaryEdge,
+			edgeStyle = {
+				'borderLeft':   secondaryEdgeStyle,
+				'borderRight':  secondaryEdgeStyle,
 				'borderBottomWidth': props.size,
 				'borderBottomStyle': "solid",
-			};
+			});
 			break;
 		case "down":
-			arrowStyle = {
-				'borderLeft':  secondaryEdge,
-				'borderRight': secondaryEdge,
+			edgeStyle = {
+				'borderLeft':  secondaryEdgeStyle,
+				'borderRight': secondaryEdgeStyle,
 				'borderTopWidth': props.size,
 				'borderTopStyle': "solid",
 			};
 			break;
 		case "left":
-			arrowStyle = {
-				'borderBottom': secondaryEdge,
-				'borderRight':  baseEdge,
-				'borderTop':    secondaryEdge,
+			edgeStyle = {
+				'borderBottom': secondaryEdgeStyle,
+				'borderRight':  baseEdgeStyle,
+				'borderTop':    secondaryEdgeStyle,
 			};
 			break;
 		case "right":
-			arrowStyle = {
-				'borderLeft':   baseEdge,
-				'borderBottom': secondaryEdge,
-				'borderTop':    secondaryEdge,
+			edgeStyle = {
+				'borderLeft':   baseEdgeStyle,
+				'borderBottom': secondaryEdgeStyle,
+				'borderTop':    secondaryEdgeStyle,
 			};
 			break;
 	}
 
-	const allStyles = Object.assign(arrowStyle, props.style);
+	const themeStyles = StyleSheet.create(theme.Caret.Caret.styles);
+	const localStyles = StyleSheet.create(edgeStyle);
 
 	return(
-		<div className={arrowClassNames} style={allStyles} onClick={props.onClickHandler}></div>
+		<div className={css([themeStyles['_base']])} style={props.style} onClick={props.onClickHandler}></div>
 	);
 }
+Caret.defaultProps = { direction: "up", size: "10px" };

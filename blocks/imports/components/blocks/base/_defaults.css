@@ -1,0 +1,16 @@
+b  { font-weight: bold; }
+em { font-style: italic; }
+/*a {
+	color: hsl(0,0,25);
+}*/
+
+div, p, span, b, * {
+	/*font-family: $font-sans;*/
+	font-size: 14px;
+	font-weight: 400;
+	/*color: $grey-40;*/
+} /* Blanket everything with this font (default) */
+code, pre, pre span {
+	font-family: monospace;
+	font-size: 13px;
+}

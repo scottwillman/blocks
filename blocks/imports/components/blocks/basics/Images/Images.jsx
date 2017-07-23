@@ -1,24 +1,27 @@
 import React from 'react';
 
-// import './Images.scss';
+import { StyleSheet, css } from 'aphrodite/no-important';
+import { theme } from '/imports/components/blocks/base/themes.js';
 
-/**
-*/
+
+
 export const Image = (props) => {
 
 	if (props.responsive) {
 
-		const respStyle = {
-			backgroundImage: 'url('+props.src+')',
-			height: props.height,
-			width: props.width || "100%",
-		}
+		const themeStyles = StyleSheet.create(theme.Image.Image.styles);
+		const localStyles = StyleSheet.create({
+			base: {
+				backgroundImage: 'url('+props.src+')',
+				height: props.height,
+				width: props.width,
+			}
+		});
 
-		_.extend(respStyle, props.style);
-
-		return <div className="image-responsive" style={respStyle}></div>
+		return <div className={css([themeStyles['_base'], localStyles['base']])} style={props.style}></div>
 
 	} else {
 		return <img src={props.src} style={props.style} />
 	}
 }
+Image.defaultProps = { responsive: False, width: "100%" };

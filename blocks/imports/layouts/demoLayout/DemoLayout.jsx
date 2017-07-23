@@ -1,52 +1,46 @@
-
 import React from 'react';
 
-// import './DemoLayout.scss';
 
-import { Layout, Header, Sidebar, Content, Footer } from '/imports/components/blocks/basics/Layout/Layout.jsx';
+import { Container, Header, Footer } from '/imports/components/blocks/basics/PageLayout/PageLayout.jsx';
+import { SidebarLayout, Sidebar, Content } from '/imports/components/blocks/basics/SidebarLayout/SidebarLayout.jsx';
 import { HorizontalNavigationList, VerticalNavigationList, NavListHeading, NavListLink, NavListText} from '/imports/components/blocks/basics/NavigationLists/NavigationLists.jsx';
+
+import { theme } from '/imports/components/blocks/base/themes.js';
 
 
 export const DemoLayout = (props) => {
 
-	// const toolBarStyle = {
-	// 	backgroundColor: "#f2f2f2",
-	// }
-	// const fixedColumnStyle = {
-	// 	"paddingLeft": "0",
-	// 	"paddingRight": "0",
-	// }
-	// const fixedColumnLayoutStyle = {
-	// 	"paddingTop": "1.5rem",
-	// }
-	// const elasticContentStyle = {
-	// 	"padding": "0 1.5rem",
-	// 	"borderLeft": "solid 1px rgb(235,235,235)",
-	// }
+	const headerStyle = {
+		"padding": "10px 8px 8px",
+		"backgroundColor": "#333",
+		"color": "#FFFFFF",
+	};
+	const footerStyle = {
+		"padding": "1rem",
+		"backgroundColor": theme.colors.grey.lightest,
+		"minHeight": "100px",
+	}
 	const headingSecondaryStyle = {
 		"marginTop": "1rem",
 	};
 	const leftSidebarStyle = {
 		"borderRight": "1px solid hsl(0,0%,90%)",
-	};
-	const mainContainerStyle = {
-		"margin": "24px 0",
+		"paddingTop": "16px",
 	};
 	const pageContentStyle = {
-		"padding": "0 24px",
+		"padding": "24px",
 	}
 
 	return (
-		<Layout>
-			<Header>Header</Header>
-			<Content style={mainContainerStyle}>
-			{/* <FixedColumnLayout style={fixedColumnLayoutStyle}> */}
+		<Container width="100%">
+			<Header style={headerStyle}>Blocks React Component Framework</Header>
+			<SidebarLayout>
 
 				<Sidebar style={leftSidebarStyle}>
 
 					<VerticalNavigationList>
 						<NavListHeading>Basic Components</NavListHeading>
-						<NavListLink to="/layout">Layout</NavListLink>
+						<NavListLink to="/sidebarLayout">SidebarLayout</NavListLink>
 						<NavListLink to="/buttons">Buttons</NavListLink>
 						<NavListLink to="/typography">Typography</NavListLink>
 						<NavListLink to="/codeblock">CodeBlock</NavListLink>
@@ -78,9 +72,9 @@ export const DemoLayout = (props) => {
 					{props.children}
 				</Content>
 
-			</Content>
-			<Footer>Footer</Footer>
+			</SidebarLayout>
+			<Footer style={footerStyle}>Footer</Footer>
 			{/* </FixedColumnLayout> */}
-		</Layout>
+		</Container>
 	);
 }

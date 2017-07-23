@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Container } from '/imports/components/blocks/basics/Container/Container.jsx';
+import { Container } from '/imports/components/blocks/basics/PageLayout/PageLayout.jsx';
 import { SectionHeading, Heading, Paragraph } from '/imports/components/blocks/basics/Typography/Typography.jsx';
 import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock.jsx';
 import { Tag } from '/imports/components/blocks/basics/Tags/Tags.jsx';
@@ -29,7 +29,7 @@ export const ImagesDemo = (props) => {
 			<SectionHeading>Images</SectionHeading>
 			<Heading style={{"marginTop":"1.25rem", "marginBottom":".8rem"}}>Description</Heading>
 			<Paragraph style={paragraphStyle}>An <em>Image</em> component can just be a plain image or it can be responive by adding the <em>responive</em> prop. If it is responsive, a height value must be supplied. Optionally, a width prop can also be specified. Otherwise, it will assume 100% width of it's parent.</Paragraph>
-			<Paragraph style={paragraphStyle}><Tag flavor="orange">Todo</Tag> Look into using max-height and max-width attributes. See if there are issues with supplying them to the style prop or if there should be dedicated props.</Paragraph>
+			<Paragraph style={paragraphStyle}><Tag color="orange">Todo</Tag> Look into using max-height and max-width attributes. See if there are issues with supplying them to the style prop or if there should be dedicated props.</Paragraph>
 
 			<Container style={demoContainer}>
 				<Image src="/images/test.jpg" style={{"borderRadius":"32px"}} />

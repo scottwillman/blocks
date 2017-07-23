@@ -59,9 +59,6 @@ export class Select extends React.Component {
 
 		let containerClassNames = [
 			'pos-rel',
-			// 'pad-8',
-			// 'width-full',
-			// 'round-2',
 		].join(' ');
 
 		let buttonClassNames = [
@@ -113,16 +110,6 @@ export class Select extends React.Component {
 				]);
 				break;
 		}
-
-
-		// const buttonClassNames = [
-		// 	'pad-8',
-		// 	'width-full',
-		// 	'round-2',
-		// 	'flex',
-		// 	'flex-justify-between',
-		// 	'flex-align-center',
-		// ].join(' ');
 
 		const caretSize = "10px";
 

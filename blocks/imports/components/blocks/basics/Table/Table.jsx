@@ -16,6 +16,19 @@ export class Table extends React.Component {
 			'data': this.props.data,
 		}
 
+
+		const styles = StyleSheet.create({
+			base: {
+				// display: "inline-block",
+				"vertical-align": "top",
+			},
+		});
+		const themeStyles = StyleSheet.create(theme.cards.styles);
+
+
+
+
+
 		this.rowDefaultClassName = 'table-flavor-light';
 
 		this.tableClassNames = [
@@ -103,7 +116,7 @@ export class Table extends React.Component {
 			<div style={{'float':'right', 'marginLeft':'8px'}}>
 				<Caret
 					size="6px"
-					color="hsl(0,0%,60%)"
+					className="hsl(0,0%,60%)"
 					activeColor="red"
 					direction="up"
 					isActive={this.state.sort_key === key && this.state.sort_dir === "asc" ? true : false}
@@ -154,34 +167,3 @@ export class Table extends React.Component {
 		);
 	}
 }
-
-// export const TableHeader = (this.props) => {
-//
-// 	return(
-// 		<th>
-// 			{this.props.children}
-// 		</th>
-// 	);
-// }
-//
-// export const TableRow = (this.props) => {
-//
-// 	return(
-// 		<tr>
-// 			{this.props.children}
-// 		</tr>
-// 	);
-// }
-//
-// export const TableCell = (this.props) => {
-//
-// 	const classNames = [
-// 		'pad-8',
-// 	].join(' ');
-//
-// 	return(
-// 		<td className={classNames}>
-// 			{this.props.children}
-// 		</td>
-// 	);
-// }

@@ -1,8 +1,11 @@
 import React from 'react';
 
+import { StyleSheet, css } from 'aphrodite/no-important';
+import { theme } from '/imports/components/blocks/base/themes.js';
+
+
 import './prism/prism.js';
 import './prism/prism.css';
-// import './CodeBlock.scss';
 
 /**
 @size: named size sm, md, lg
@@ -102,13 +105,12 @@ export class CodeBlock extends React.Component {
 	}
 
 	render() {
+
 		let languageClass = "language-"+this.props.language;
-		const classNames = [
-			'border-grey-90',
-		].join(' ');
+		const themeStyles = StyleSheet.create(theme.CodeBlock.CodeBlock.styles);
 
 		return(
-			<pre className={classNames} style={this.props.style}>
+			<pre className={css([themeStyles['_base']])} style={this.props.style}>
 				<code className={languageClass}>
 					{this.trimInputCodeBlock()}
 				</code>
@@ -116,3 +118,4 @@ export class CodeBlock extends React.Component {
 		);
 	}
 }
+CodeBlock.defaultProps = { language: "javascript" };
