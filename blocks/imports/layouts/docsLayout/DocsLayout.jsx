@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router'
+
 
 // import { Container, Header, Footer } from '/imports/components/blocks/basics/PageLayout/PageLayout.jsx';
 // import { SidebarLayout, Sidebar, Content } from '/imports/components/blocks/basics/SidebarLayout/SidebarLayout.jsx';
@@ -9,7 +9,7 @@ import { Link } from 'react-router'
 
 import { PageLayout, PageHeader, PageFooter } from '/imports/components/blocks/basics/PageLayout/PageLayout.jsx';
 import { ColumnLayout, PrimaryColumn, SecondaryColumn } from '/imports/components/blocks/basics/ColumnLayout/ColumnLayout.jsx';
-import { Heading, Paragraph } from '/imports/components/blocks/basics/Typography/Typography.jsx';
+import { Heading, Paragraph, ALink } from '/imports/components/blocks/basics/Typography/Typography.jsx';
 import { NavigationList } from '/imports/components/blocks/basics/NavigationList/NavigationList.jsx';
 
 
@@ -46,9 +46,9 @@ export const DocsLayout = (props) => {
 				<SecondaryColumn style={leftSidebarStyle}>
 					<Heading>Navigation</Heading>
 					<NavigationList>
-						<Link to="/buttons">Buttons</Link>
-						<Link to="/tags">Tags</Link>
-						<Link to="/table">Table</Link>
+						<ALink to="/buttons">Buttons</ALink>
+						<ALink to="/tags">Tags</ALink>
+						<ALink to="/table">Table</ALink>
 					</NavigationList>
 
 				</SecondaryColumn>

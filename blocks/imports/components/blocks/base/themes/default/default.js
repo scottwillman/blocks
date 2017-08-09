@@ -73,6 +73,15 @@ Typography.Paragraph = {
 		}
 	}
 }
+Typography.ALink = {
+	styles: {
+		_base: {
+			color: colors.black,
+			"text-decoration": "none",
+			fontFamily: fonts.common,
+		}
+	}
+}
 
 
 // TAGS //

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router'
 
 import { StyleSheet, css } from 'aphrodite/no-important';
 import { theme } from '/imports/components/blocks/base/themes.js';
@@ -39,5 +40,16 @@ export const Paragraph = (props) => {
 		<p className={css([themeStyles['_base']])} style={props.style}>
 			{props.children}
 		</p>
+	);
+}
+
+export const ALink = (props) => {
+
+	const themeStyles = StyleSheet.create(theme.ALink.styles);
+
+	return(
+		<Link {...props} className={css([themeStyles['_base']])} style={props.style}>
+			{props.children}
+		</Link>
 	);
 }
