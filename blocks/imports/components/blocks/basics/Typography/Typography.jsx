@@ -4,10 +4,12 @@ import { StyleSheet, css } from 'aphrodite/no-important';
 import { theme } from '/imports/components/blocks/base/themes.js';
 
 
+theme = theme.Typography;
+
 
 export const SectionHeading = (props) => {
 
-	const themeStyles = StyleSheet.create(theme.sectionHeading.styles);
+	const themeStyles = StyleSheet.create(theme.SectionHeading.styles);
 
 	return(
 		<h2 className={css([themeStyles['_base']])} style={props.style}>
@@ -19,7 +21,7 @@ export const SectionHeading = (props) => {
 
 export const Heading = (props) => {
 
-	const themeStyles = StyleSheet.create(theme.heading.styles);
+	const themeStyles = StyleSheet.create(theme.Heading.styles);
 
 	return(
 		<h4 className={css([themeStyles['_base']])} style={props.style}>
@@ -31,7 +33,7 @@ export const Heading = (props) => {
 
 export const Paragraph = (props) => {
 
-	const themeStyles = StyleSheet.create(theme.paragraph.styles);
+	const themeStyles = StyleSheet.create(theme.Paragraph.styles);
 
 	return(
 		<p className={css([themeStyles['_base']])} style={props.style}>

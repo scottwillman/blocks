@@ -27,3 +27,10 @@ mkdir -p public/{images,photos}
 mkdir -p imports/{components,layouts}
 mv client/main.js client/routes.jsx
 rm client/main.css
+
+
+
+meteor npm install --save react react-dom react-router-dom
+meteor remove blaze-html-templates
+meteor add static-html
+meteor add react-meteor-data

@@ -7,6 +7,9 @@ import { theme } from '/imports/components/blocks/base/themes.js';
 import './prism/prism.js';
 import './prism/prism.css';
 
+
+theme = theme.CodeBlock;
+
 /**
 @size: named size sm, md, lg
 @isSubmit: boolean
@@ -107,7 +110,7 @@ export class CodeBlock extends React.Component {
 	render() {
 
 		let languageClass = "language-"+this.props.language;
-		const themeStyles = StyleSheet.create(theme.CodeBlock.CodeBlock.styles);
+		const themeStyles = StyleSheet.create(theme.CodeBlock.styles);
 
 		return(
 			<pre className={css([themeStyles['_base']])} style={this.props.style}>

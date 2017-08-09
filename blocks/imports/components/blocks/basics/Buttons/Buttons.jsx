@@ -4,22 +4,23 @@ import { StyleSheet, css } from 'aphrodite/no-important';
 import { theme } from '/imports/components/blocks/base/themes.js';
 
 
+theme = theme.Buttons;
 
 
 export const Button = (props) => {
 
 	const btnType = props.isSubmit ? "submit" : "button";
 
-	const themeStyles = StyleSheet.create(theme.Buttons.Button.styles);
-	const themeSizes  = StyleSheet.create(theme.Buttons.Button.sizes);
+	const themeStyles = StyleSheet.create(theme.Button.styles);
+	const themeSizes  = StyleSheet.create(theme.Button.sizes);
 
 	return(
-		<button type={btnType} className={css([themeStyles['_base'], themeStyles[props.color], themeSizes[props.size]])} onClick={props.onClickHandler} style={props.style}>
+		<button type={btnType} className={css([themeStyles['_base'], themeStyles[props.flavor], themeSizes[props.size]])} onClick={props.onClickHandler} style={props.style}>
 			{props.children}
 		</button>
 	);
 }
-Button.defaultProps = { 'color': theme.Buttons.Button.defaultStyle, 'size': theme.Buttons.Button.defaultSize };
+Button.defaultProps = { 'flavor': theme.Button.defaults.style, 'size': theme.Button.defaults.size };
 
 
 
@@ -31,7 +32,7 @@ TODO: Add controls props to set the sizing of the buttons in the group from this
 */
 export const ButtonGroup = (props) => {
 
-	const themeStyles = StyleSheet.create(theme.Buttons.Group.styles);
+	const themeStyles = StyleSheet.create(theme.Group.styles);
 
 	return(
 		<div className={css(themeStyles['_base'])} style={props.style}>

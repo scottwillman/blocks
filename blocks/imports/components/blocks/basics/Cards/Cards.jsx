@@ -4,6 +4,8 @@ import { StyleSheet, css } from 'aphrodite/no-important';
 import { theme } from '/imports/components/blocks/base/themes.js';
 
 
+theme = theme.Cards;
+
 // export const CardLayout = (props) => {
 //
 // 	const themeStyles = StyleSheet.create(theme.cardLayout.styles);
@@ -19,7 +21,7 @@ import { theme } from '/imports/components/blocks/base/themes.js';
 
 export const Card = (props) => {
 
-	const themeStyles = StyleSheet.create(theme.Cards.card.styles);
+	const themeStyles = StyleSheet.create(theme.Card.styles);
 
 	return(
 		<div className={css([themeStyles['_base'], themeStyles[props.flavor]])} style={props.style}>
@@ -27,7 +29,7 @@ export const Card = (props) => {
 		</div>
 	);
 }
-Card.defaultProps = { flavor: theme.Cards.Card.defaultStyle };
+Card.defaultProps = { flavor: theme.Card.defaults.style };
 
 
 // export const CardBanner = (props) => {

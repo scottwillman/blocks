@@ -4,14 +4,17 @@ import { StyleSheet, css } from 'aphrodite/no-important';
 import { theme } from '/imports/components/blocks/base/themes.js';
 
 
+theme = theme.Tags;
+
+
 export const Tag = (props) => {
 
-	const themeStyles = StyleSheet.create(theme.tags.styles);
+	const themeStyles = StyleSheet.create(theme.Tag.styles);
 
 	return(
-		<span className={css([themeStyles['_base'], themeStyles[props.color]])} style={props.style}>
+		<span className={css([themeStyles['_base'], themeStyles[props.flavor]])} style={props.style}>
 			{props.children}
 		</span>
 	);
 }
-Tag.defaultProps = { color: theme.tags.defaultStyle };
+Tag.defaultProps = { flavor: theme.Tag.defaults.style };

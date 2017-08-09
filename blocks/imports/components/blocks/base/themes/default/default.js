@@ -1,5 +1,6 @@
 ///// BLOCKS THEME CONFIG /////
 
+const DEBUG = 0;
 
 // FONTS //
 import "./fonts.css";
@@ -9,9 +10,9 @@ const fonts = {
 	mono: "Montserrat",
 }
 
-
 // COLORS //
 export const colors = {
+	random: () => { return 'hsl(' + Math.floor(Math.random() * 256)+', 80%, 60%)'  },
 	white: 'hsl(0, 0%, 100%)',
 	black: 'hsl(0, 0%,   0%)',
 	grey: {
@@ -45,26 +46,29 @@ export const colors = {
 
 
 // TYPOGRAPHY //
-export const sectionHeading = {
+export const Typography = {};
+
+Typography.SectionHeading = {
 	styles: {
 		_base: {
 			fontFamily: fonts.common,
-			fontSize: 28,
+			fontSize: '26px',
 		}
 	}
 }
-export const heading = {
+Typography.Heading = {
 	styles: {
 		_base: {
 			fontFamily: fonts.common,
-			fontSize: 18,
+			fontSize: '20px',
 		}
 	}
 }
-export const paragraph = {
+Typography.Paragraph = {
 	styles: {
 		_base: {
 			fontFamily: fonts.common,
+			fontSize: '14px',
 			lineHeight: '20px',
 		}
 	}
@@ -72,10 +76,15 @@ export const paragraph = {
 
 
 // TAGS //
-export const tags = {
-	defaultStyle: "light",
+export const Tags = {};
+
+Tags.Tag = {
+	defaults: {
+		style: "light",
+	},
 	styles: {
 		_base: {
+			fontFamily: fonts.common,
 			fontSize: 12,
 			padding: '3px 8px',
 			borderRadius: 3,
@@ -117,8 +126,10 @@ CodeBlock.CodeBlock = {
 export const Buttons = {};
 
 Buttons.Button = {
-	defaultStyle: "light",
-	defaultSize: "medium",
+	defaults: {
+		style: "light",
+		size: "medium",
+	},
 	styles: {
 		_base: {
 			cursor: 'pointer',
@@ -196,10 +207,12 @@ Buttons.Group = {
 
 
 // CONTAINER //
-export const Container = {};
+export const Containers = {};
 
-Container.Container = {
-	defaultStyle: "bordered",
+Containers.Container = {
+	defaults: {
+		"style": "bordered",
+	},
 	styles: {
 		_base: {
 			margin: "0 auto",
@@ -220,87 +233,101 @@ export const PageLayout = {};
 PageLayout.PageLayout = {
 	styles: {
 		_base: {
+			"background-color": DEBUG ? colors.random() : "",
 			margin: "0 auto",
 			width: "100%",
 		}
 	}
 }
-PageLayout.Header = {
+PageLayout.PageHeader = {
 	styles: {
 		_base: {
 			fontFamily: fonts.common,
+			color: colors.white,
 			borderBottomWidth: "1px",
 			borderBottomStyle: "solid",
 			borderBottomColor: colors.grey.lighter,
-			backgroundColor: colors.grey.lighter,
+			backgroundColor: DEBUG ? colors.random() : colors.grey.dark,
+			padding: "12px 0"
 		}
 	}
 }
-PageLayout.Footer = {
+PageLayout.PageFooter = {
 	styles: {
 		_base: {
 			fontFamily: fonts.common,
+			color: colors.grey.dark,
 			borderTopWidth: "1px",
 			borderTopStyle: "solid",
 			borderTopColor: colors.grey.lighter,
-			backgroundColor: colors.grey.lighter,
+			backgroundColor: DEBUG ? colors.random() : colors.grey.lighter,
+			padding: "12px 0"
 		}
 	}
 }
 
-
-// Vertical Navigation //
+// Navigation List //
 export const NavigationList = {};
 
 NavigationList.NavigationList = {
+	defaults: {
+		orientation: "vertical",
+	},
 	styles: {
 		_base: {
 			"list-style": "none",
 		},
-		red: {
-			border: "1px red solid",
+		horizontal: {
+			// border: "1px red solid",
 		},
-		green: {
-			border: "1px green solid",
+		vertical: {
+			"padding-top": "8px",
 		}
-	}
+	},
+
 }
 
 
-// SIDEBAR LAYOUT //
-export const SidebarLayout = {};
+// COLUMN LAYOUT //
+export const ColumnLayout = {};
 
-SidebarLayout.SidebarLayout = {
+ColumnLayout.ColumnLayout = {
 	styles: {
 		_base: {
+			"background-color": DEBUG ? colors.random() : "",
 			display: "flex",
 			flexDirection: "row",
 		}
 	}
 }
-SidebarLayout.Sidebar = {
+ColumnLayout.SecondaryColumn = {
 	styles: {
 		_base: {
 			// The two following style are set by
 			// prop in the component.
 			// flex: "0 0 "+props.width,
 			// "align-items": props.verticalAlign,
+			width: "200px",
+			"vertical-align": "top",
+			"background-color": DEBUG ? colors.random() : "",
 		}
 	}
 }
-SidebarLayout.Content = {
+ColumnLayout.PrimaryColumn = {
 	styles: {
 		_base: {
+			"vertical-align": "top",
 			"flex-grow": "1",
+			"background-color": DEBUG ? colors.random() : "",
 		}
 	}
 }
 
 
 // IMAGE //
-export const Image = {};
+export const Images = {};
 
-Image.Image = {
+Images.Image = {
 	styles: {
 		_base: {
 			"background-size": "cover",
@@ -326,7 +353,9 @@ Image.Image = {
 export const Cards = {};
 
 Cards.Card = {
-	defaultStyle: "basic",
+	defaults: {
+		style: "basic"
+	},
 	styles: {
 		_base: {
 			display: "flex",
@@ -375,7 +404,11 @@ Cards.Card = {
 export const Caret = {};
 
 Caret.Caret = {
-	defaultStyle: "basic",
+	defaults: {
+		style: "basic",
+		direction: "up",
+		size: "10px",
+	},
 	styles: {
 		_base: {
 			"width": "0px",
@@ -389,6 +422,19 @@ Caret.Caret = {
 			active: {
 				"border-color": colors.blue.base,
 			},
+		}
+	}
+}
+
+// TABLE //
+export const Table = {};
+
+Table.Table = {
+	defaults: {},
+	styles: {
+		_base: {
+			border: colors.grey.light,
+			"border-width": "1px",
 		}
 	}
 }

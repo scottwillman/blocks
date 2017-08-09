@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Container } from '/imports/components/blocks/basics/PageLayout/PageLayout.jsx';
+import { Container } from '/imports/components/blocks/basics/Containers/Containers.jsx';
 import { SectionHeading, Heading, Paragraph } from '/imports/components/blocks/basics/Typography/Typography.jsx';
 import { Button, ButtonGroup } from '/imports/components/blocks/basics/Buttons/Buttons.jsx';
 import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock.jsx';
@@ -20,7 +20,7 @@ export class ButtonDemo extends React.Component {
 	render() {
 
 		const headingStyle = {
-			"marginTop": "1.5rem",
+			"marginTop": "12px",
 			"marginBottom": ".8rem",
 		}
 		const codeBlockStyle = {
@@ -38,8 +38,8 @@ export class ButtonDemo extends React.Component {
 
 		return (
 			<Container>
-				{/* BUTTONS */}
-				<SectionHeading>Buttons <Tag color="blue">Themeable</Tag></SectionHeading>
+
+				<SectionHeading>Buttons</SectionHeading>
 				<Heading style={headingStyle}>Sizes</Heading>
 				<Paragraph>All buttons come in large, medium (default), or small.</Paragraph>
 
@@ -61,19 +61,19 @@ export class ButtonDemo extends React.Component {
 				<Paragraph>Buttons come in different <em>colors</em>. These determine the visual style.</Paragraph>
 				<Container style={demoContainer}>
 					<Button style={buttonStyle}>Light</Button>
-					<Button color="grey" style={buttonStyle}>Grey</Button>
-					<Button color="orange" style={buttonStyle}>Orange</Button>
-					<Button color="blue" style={buttonStyle}>Blue</Button>
-					<Button color="red" style={buttonStyle}>Red</Button>
-					<Button color="green" style={buttonStyle}>Green</Button>
+					<Button flavor="grey" style={buttonStyle}>Grey</Button>
+					<Button flavor="orange" style={buttonStyle}>Orange</Button>
+					<Button flavor="blue" style={buttonStyle}>Blue</Button>
+					<Button flavor="red" style={buttonStyle}>Red</Button>
+					<Button flavor="green" style={buttonStyle}>Green</Button>
 
 					<CodeBlock language="jsx" style={codeBlockStyle}>{`
 						<Button>Light</Button>
-						<Button color="grey">Grey</Button>
-						<Button color="orange">Orange</Button>
-						<Button color="blue">Blue</Button>
-						<Button color="red">Red</Button>
-						<Button color="green">Green</Button>
+						<Button flavor="grey">Grey</Button>
+						<Button flavor="orange">Orange</Button>
+						<Button flavor="blue">Blue</Button>
+						<Button flavor="red">Red</Button>
+						<Button flavor="green">Green</Button>
 					`}</CodeBlock>
 				</Container>
 

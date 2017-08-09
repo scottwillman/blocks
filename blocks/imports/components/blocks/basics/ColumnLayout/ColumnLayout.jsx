@@ -4,10 +4,12 @@ import { StyleSheet, css } from 'aphrodite/no-important';
 import { theme } from '/imports/components/blocks/base/themes.js';
 
 
+theme = theme.ColumnLayout;
 
-export const SidebarLayout = (props) => {
 
-	const themeStyles = StyleSheet.create(theme.SidebarLayout.SidebarLayout.styles);
+export const ColumnLayout = (props) => {
+
+	const themeStyles = StyleSheet.create(theme.ColumnLayout.styles);
 
 	return(
 		<div className={css([themeStyles['_base']])} style={props.style}>
@@ -15,13 +17,30 @@ export const SidebarLayout = (props) => {
 		</div>
 	);
 }
-SidebarLayout.defaultProps = {};
+ColumnLayout.defaultProps = {};
 
 
+export const PrimaryColumn = (props) => {
 
-export const Sidebar = (props) => {
+	const themeStyles = StyleSheet.create(theme.PrimaryColumn.styles);
+	const localStyles = StyleSheet.create({ // to allow control by props
+		base: {
+			"align-items": props.verticalAlign,
+		},
+	});
 
-	const themeStyles = StyleSheet.create(theme.SidebarLayout.Sidebar.styles);
+	return(
+		<div className={css([themeStyles['_base'], localStyles['base']])} style={props.style}>
+			{props.children}
+		</div>
+	);
+}
+PrimaryColumn.defaultProps = {};
+
+
+export const SecondaryColumn = (props) => {
+
+	const themeStyles = StyleSheet.create(theme.SecondaryColumn.styles);
 	const localStyles = StyleSheet.create({ // to allow control by props
 		base: {
 			flex: "0 0 "+props.width,
@@ -35,22 +54,4 @@ export const Sidebar = (props) => {
 		</div>
 	);
 }
-Sidebar.defaultProps = { width: "200px", verticalAlign: "top" };
-
-
-export const Content = (props) => {
-
-	const themeStyles = StyleSheet.create(theme.SidebarLayout.Content.styles);
-	const localStyles = StyleSheet.create({ // to allow control by props
-		base: {
-			"align-items": props.verticalAlign,
-		},
-	});
-
-	return(
-		<div className={css([themeStyles['_base'], localStyles['base']])} style={props.style}>
-			{props.children}
-		</div>
-	);
-}
-Content.defaultProps = { verticalAlign: "top" };
+SecondaryColumn.defaultProps = {};

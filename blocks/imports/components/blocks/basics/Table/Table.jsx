@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Caret } from '../Caret/Caret.jsx';
-
+import { StyleSheet, css } from 'aphrodite/no-important';
 
 /**
 */
@@ -17,13 +17,13 @@ export class Table extends React.Component {
 		}
 
 
-		const styles = StyleSheet.create({
-			base: {
-				// display: "inline-block",
-				"vertical-align": "top",
-			},
-		});
-		const themeStyles = StyleSheet.create(theme.cards.styles);
+		// const styles = StyleSheet.create({
+		// 	base: {
+		// 		// display: "inline-block",
+		// 		"vertical-align": "top",
+		// 	},
+		// });
+		// const themeStyles = StyleSheet.create(theme.cards.styles);
 
 
 

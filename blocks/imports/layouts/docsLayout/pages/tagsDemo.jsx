@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Container } from '/imports/components/blocks/basics/PageLayout/PageLayout.jsx';
+import { Container } from '/imports/components/blocks/basics/Containers/Containers.jsx';
 import { SectionHeading, Heading, Paragraph } from '/imports/components/blocks/basics/Typography/Typography.jsx';
 import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock.jsx';
 import { Tag } from '/imports/components/blocks/basics/Tags/Tags.jsx';
@@ -23,19 +23,19 @@ export const TagsDemo = (props) => {
 	return(
 		<Container>
 
-			<SectionHeading>Tags <Tag color="blue">Themeable</Tag></SectionHeading>
+			<SectionHeading>Tags</SectionHeading>
 			<Heading style={{"marginTop":"1.25rem", "marginBottom":".8rem"}}>Description</Heading>
 			<Paragraph>Tags can be used for all kinds of stuff. Available colors are anything you specify in your theme's <em>colors</em> object.</Paragraph>
 			<Paragraph><Tag color="orange">TODO</Tag>Need to add icon support and a possible close button with callback.</Paragraph>
 
 			<Container style={demoContainer}>
 				<Tag>Default</Tag>
-				<Tag color="black">Black</Tag>
-				<Tag color="grey">Grey</Tag>
-				<Tag color="orange">Orange</Tag>
-				<Tag color="red">Red</Tag>
-				<Tag color="blue">Blue</Tag>
-				<Tag color="green">Green</Tag>
+				<Tag flavor="black">Black</Tag>
+				<Tag flavor="grey">Grey</Tag>
+				<Tag flavor="orange">Orange</Tag>
+				<Tag flavor="red">Red</Tag>
+				<Tag flavor="blue">Blue</Tag>
+				<Tag flavor="green">Green</Tag>
 			</Container>
 
 
@@ -45,12 +45,12 @@ export const TagsDemo = (props) => {
 
 					<Container>
 						<Tag>Default</Tag>
-						<Tag color="black">Black</Tag>
-						<Tag color="grey">Grey</Tag>
-						<Tag color="orange">Orange</Tag>
-						<Tag color="red">Red</Tag>
-						<Tag color="blue">Blue</Tag>
-						<Tag color="green">Green</Tag>
+						<Tag flavor="black">Black</Tag>
+						<Tag flavor="grey">Grey</Tag>
+						<Tag flavor="orange">Orange</Tag>
+						<Tag flavor="red">Red</Tag>
+						<Tag flavor="blue">Blue</Tag>
+						<Tag flavor="green">Green</Tag>
 					</Container>
 				`}</CodeBlock>
 			</Container>
