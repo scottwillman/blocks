@@ -26,4 +26,4 @@ export const Image = (props) => {
 		return <img src={props.src} style={props.style} />
 	}
 }
-Image.defaultProps = { responsive: False, width: "100%" };
+Image.defaultProps = { responsive: false, width: "100%" };

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Container } from '/imports/components/blocks/basics/PageLayout/PageLayout.jsx';
+import { Container } from '/imports/components/blocks/basics/Containers/Containers.jsx';
 import { SectionHeading, Heading, Paragraph } from '/imports/components/blocks/basics/Typography/Typography.jsx';
 import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock.jsx';
 import { Tag } from '/imports/components/blocks/basics/Tags/Tags.jsx';
@@ -10,7 +10,6 @@ import { CardLayout, Card, CardBanner, CardHeading, CardParagraph } from '/impor
 import { ToolBar, ToolBarContainer } from '/imports/components/blocks/basics/ToolBar/ToolBar.jsx';
 
 import { Button, ButtonGroup } from '/imports/components/blocks/basics/Buttons/Buttons.jsx';
-import { HorizontalNavigationList, NavListLink } from '/imports/components/blocks/basics/NavigationLists/NavigationLists.jsx';
 import { Image } from '/imports/components/blocks/basics/Images/Images.jsx';
 
 export const CardsDemo = (props) => {

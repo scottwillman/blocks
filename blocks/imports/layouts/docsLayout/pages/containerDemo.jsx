@@ -7,7 +7,7 @@ import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock
 
 
 
-export const ContainersDemo = (props) => {
+export const ContainerDemo = (props) => {
 
 	const headingStyle = {
 		"marginTop": "1.5rem",
