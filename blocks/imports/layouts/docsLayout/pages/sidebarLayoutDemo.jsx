@@ -1,12 +1,11 @@
 import React from 'react';
 
 
-// import { Container } from '/imports/components/blocks/basics/Container/Container.jsx';
+import { Container } from '/imports/components/blocks/basics/Containers/Containers.jsx';
 import { SectionHeading, Heading, Paragraph } from '/imports/components/blocks/basics/Typography/Typography.jsx';
 import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock.jsx';
 import { Tag } from '/imports/components/blocks/basics/Tags/Tags.jsx';
 
-import { Container, Header, Footer } from '/imports/components/blocks/basics/PageLayout/PageLayout.jsx';
 import { SidebarLayout, Sidebar, Content } from '/imports/components/blocks/basics/SidebarLayout/SidebarLayout.jsx';
 
 

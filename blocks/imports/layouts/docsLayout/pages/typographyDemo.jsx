@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Container } from '/imports/components/blocks/basics/PageLayout/PageLayout.jsx';
+import { Container } from '/imports/components/blocks/basics/Containers/Containers.jsx';
 import { SectionHeading, Heading, Paragraph } from '/imports/components/blocks/basics/Typography/Typography.jsx';
 import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock.jsx';
 
@@ -33,7 +33,7 @@ export const TypographyDemo = (props) => {
 			<SectionHeading>Section Heading</SectionHeading>
 			<Heading style={headingStyle}>Description</Heading>
 			<Paragraph><b>Some text goes here</b></Paragraph>
-			<Paragraph>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Paragraph>
+			<Paragraph>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Paragraph>	
 		</Container>
 	);
 }

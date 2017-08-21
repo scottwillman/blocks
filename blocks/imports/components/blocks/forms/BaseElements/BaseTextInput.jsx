@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 
 export class BaseTextInput extends React.Component {
@@ -111,12 +111,12 @@ export class BaseTextInput extends React.Component {
 	}
 }
 BaseTextInput.propTypes = {
-	name: React.PropTypes.string.isRequired,
-	value: React.PropTypes.string,
-	validationCallback: React.PropTypes.func,
-	errorMessage: React.PropTypes.string,
-	doneTypingInterval: React.PropTypes.number,
-	placeholderText: React.PropTypes.string,
+	name: PropTypes.string.isRequired,
+	value: PropTypes.string,
+	validationCallback: PropTypes.func,
+	errorMessage: PropTypes.string,
+	doneTypingInterval: PropTypes.number,
+	placeholderText: PropTypes.string,
 }
 BaseTextInput.defaultProps = {
 	doneTypingInterval: 1000,

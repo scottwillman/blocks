@@ -48,7 +48,7 @@ table {
 }
 
 
-/// BORDER BOX
+/* BORDER BOX */
 html {
 	box-sizing: border-box;
 }

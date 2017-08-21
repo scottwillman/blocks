@@ -270,7 +270,7 @@ PageLayout.PageFooter = {
 			borderTopStyle: "solid",
 			borderTopColor: colors.grey.lighter,
 			backgroundColor: DEBUG ? colors.random() : colors.grey.lighter,
-			padding: "12px 0"
+			height: "50px"
 		}
 	}
 }
@@ -379,34 +379,42 @@ Cards.Card = {
 		}
 	}
 }
-// Cards.Banner = {
-// 	defaultStyle: "basic",
-// 	styles: {
-// 		basic: {
-// 			"background-color": colors.grey.lightest,
-// 			"padding": "12px",
-// 			"font-size": "18px",
-// 		}
-// 	}
-// }
-// Cards.Heading = {
-// 	defaultStyle: "basic",
-// 	styles: {
-// 		basic: {
-//
-// 		}
-// 	}
-// }
-// Cards.Paragraph = {
-// 	defaultStyle: "basic",
-// 	styles: {
-// 		basic: {
-// 			"padding": "12px",
-// 			"font-size": "14px",
-// 			"line-height": "20px",
-// 		}
-// 	}
-// }
+Cards.cardBanner = {
+	defaultStyle: "basic",
+	styles: {
+		basic: {
+			"background-color": colors.grey.lightest,
+			"padding": "12px",
+			"font-size": "18px",
+		}
+	}
+}
+Cards.cardHeading = {
+	defaultStyle: "basic",
+	styles: {
+		basic: {
+
+		}
+	}
+}
+Cards.cardLayout = {
+	defaultStyle: "basic",
+	styles: {
+		basic: {
+
+		}
+	}
+}
+Cards.cardParagraph = {
+	defaultStyle: "basic",
+	styles: {
+		basic: {
+			"padding": "12px",
+			"font-size": "14px",
+			"line-height": "20px",
+		}
+	}
+}
 
 
 // CARET //

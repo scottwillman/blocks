@@ -1,12 +1,11 @@
 import React from 'react';
 
 
-import { Container } from '/imports/components/blocks/basics/PageLayout/PageLayout.jsx';
+import { Container } from '/imports/components/blocks/basics/Containers/Containers.jsx';
 import { SectionHeading, Heading, Paragraph } from '/imports/components/blocks/basics/Typography/Typography.jsx';
 import { CodeBlock } from '/imports/components/blocks/basics/CodeBlock/CodeBlock.jsx';
 import { ToolBar, ToolBarContainer } from '/imports/components/blocks/basics/ToolBar/ToolBar.jsx';
 import { Button, ButtonGroup } from '/imports/components/blocks/basics/Buttons/Buttons.jsx';
-import { HorizontalNavigationList, NavListLink } from '/imports/components/blocks/basics/NavigationLists/NavigationLists.jsx';
 import { Tag } from '/imports/components/blocks/basics/Tags/Tags.jsx';
 
 export const ToolBarDemo = (props) => {
@@ -37,11 +36,6 @@ export const ToolBarDemo = (props) => {
 			<Container style={demoContainerStyle}>
 				<ToolBar style={{'padding': '8px', 'paddingRight':'22px'}}>
 					<ToolBarContainer>
-						{/* <HorizontalNavigationList>
-							<NavListLink to="/buttons">Buttons</NavListLink>
-							<NavListLink to="/toolbar">ToolBar</NavListLink>
-							<NavListLink to="/horizontalnavigationlist">HorizontalNavigationList</NavListLink>
-						</HorizontalNavigationList> */}
 						<Button style={rightMarginStyle}>Single</Button>
 						<ButtonGroup style={rightMarginStyle}>
 							<Button>Left</Button>
@@ -99,11 +93,6 @@ export const ToolBarDemo = (props) => {
 			<Container style={demoContainerStyle}>
 				<ToolBar style={{'padding': '4px'}}>
 					<ToolBarContainer>
-						{/* <HorizontalNavigationList>
-							<NavListLink to="/buttons">Buttons</NavListLink>
-							<NavListLink to="/toolbar">ToolBar</NavListLink>
-							<NavListLink to="/horizontalnavigationlist">HorizontalNavigationList</NavListLink>
-						</HorizontalNavigationList> */}
 
 						<Button size="small">Left Button</Button>
 						<ButtonGroup>

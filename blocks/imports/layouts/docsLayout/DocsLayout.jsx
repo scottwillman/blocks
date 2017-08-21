@@ -17,14 +17,20 @@ import { NavigationList } from '/imports/components/blocks/basics/NavigationList
 export const DocsLayout = (props) => {
 
 	const pagePadding = "20px";
+	const pageHeaderTitle = {
+		color: "#fff"
+	}
 	const pageHeaderStyle = {
-		padding: "10px " + pagePadding,
+		padding: "10px " + pagePadding
 	}
 	const pageContentStyle = {
 		padding: "0px " + pagePadding,
+		minHeight: "94vh"
 	}
 	const pageFooterStyle = {
 		padding: "20px " + pagePadding,
+		position: "absolute",
+		width: "100%"
 	}
 
 	const mainContainerStyle = {
@@ -38,7 +44,7 @@ export const DocsLayout = (props) => {
 	return (
 		<PageLayout>
 			<PageHeader style={pageHeaderStyle}>
-				Blocks React Component Framework
+				<ALink to="/" style={pageHeaderTitle}>Blocks React Component Framework</ALink>
 			</PageHeader>
 
 			<ColumnLayout style={pageContentStyle}>
@@ -46,9 +52,19 @@ export const DocsLayout = (props) => {
 				<SecondaryColumn style={leftSidebarStyle}>
 					<Heading>Navigation</Heading>
 					<NavigationList>
+						<ALink to="/container">Container</ALink>
 						<ALink to="/buttons">Buttons</ALink>
 						<ALink to="/tags">Tags</ALink>
 						<ALink to="/table">Table</ALink>
+						<ALink to="/codeblock">Code Block</ALink>
+						<ALink to="/typography">Typography</ALink>
+						<ALink to="/vertical">Vertical Nav</ALink>
+						<ALink to="/toolbar">Toolbar</ALink>
+						<ALink to="/fileinput">File Input</ALink>
+						<ALink to="/cards">Cards</ALink>
+						<ALink to="/textinput">Text Input</ALink>
+						<ALink to="/images">Images</ALink>
+						<ALink to="/select">Select</ALink>
 					</NavigationList>
 
 				</SecondaryColumn>
